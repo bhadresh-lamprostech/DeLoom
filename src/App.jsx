@@ -33,6 +33,7 @@ import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { Sidebar, Navbar } from "./components";
 import { CampaignDetails, CreateCampaign, Home, Profile } from "./pages";
 import LandingPage from "./pages/Landingpage";
+import RegForm from "./pages/RegForm";
 
 const App = () => {
   const location = useLocation();
@@ -60,6 +61,8 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-campaign" element={<CreateCampaign />} />
           <Route path="/campaign-details/:id" element={<CampaignDetails />} />
+          <Route path="/reg-form" element={<RegForm />} />
+
         </Routes>
       </div>
     </div>
