@@ -21,6 +21,8 @@ const Sidebar = () => {
     const [isActive, setIsActive]=useState('dashboard')
 
   return (
+    <div className='p-3'>
+
     <div className='flex justify-between item-center flex-col sticky top-5 h-[93vh]'>
         <Link to="/">
             <Icon styles="w-[52px] h-[52px] bg-[32c2f32]" imgUrl={logo}/>
@@ -29,7 +31,7 @@ const Sidebar = () => {
         rounded-[20px] w-[76px] py-4 mt-12'>
             <div className='flex flex-col justify-center items-center gap-3'>
             {navlinks.map((link) => (
-            <Icon
+              <Icon
               key={link.name}
               {...link}
               isActive={isActive}
@@ -39,13 +41,14 @@ const Sidebar = () => {
                   navigate(link.link);
                 }
               }}
-            />
-          ))}
+              />
+              ))}
             </div>
             <Icon styles="bg=[#1c1c24] shadow-secondary"
            imgUrl={sun} />
         </div>
      
+           </div>
     </div>
   );
 }
