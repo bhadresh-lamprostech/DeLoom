@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import MainDashboard from "../components/dashboard/MainDashboard";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <MainDashboard />
+    </>
+  );
 }
 
-export default Home
+export default Home;

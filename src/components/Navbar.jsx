@@ -10,7 +10,8 @@ const Navbar = () => {
   const [toogleDrawer, setToogleDrawer] = useState("false");
 
   return (
-    <div className="sm:pr-5 p-4">
+    // <div className="sm:pr-5 p-4">
+    <div className="sm:pr-5 p-4 sticky top-0 bg-[#13131a] z-10">
       <div
         className="flex md:flex-row flex-col-reverse justify-between mb-[35px]
     gap-6"

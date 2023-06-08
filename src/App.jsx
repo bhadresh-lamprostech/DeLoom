@@ -57,7 +57,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/landing" />} />
           <Route path="/landing" element={<LandingPage />} />
-          {/* <Route path="/home" element={<Home />} /> */}
+          <Route path="/home" element={<Home />} />
           {/* <Route path="/profile" element={<Profile />} /> */}
           <Route path="/create-campaign" element={<CreateCampaign />} />
           <Route path="/campaign-details/:id" element={<CampaignDetails />} />
