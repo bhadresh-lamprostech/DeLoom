@@ -27,13 +27,13 @@
 
 // export default App;
 
-
 import React from "react";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { Sidebar, Navbar } from "./components";
 import { CampaignDetails, CreateCampaign, Home, Profile } from "./pages";
 import LandingPage from "./pages/Landingpage";
 import RegForm from "./pages/RegForm";
+import UserProfile from "./pages/UserProfile";
 
 const App = () => {
   const location = useLocation();
@@ -57,12 +57,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/landing" />} />
           <Route path="/landing" element={<LandingPage />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
+          {/* <Route path="/home" element={<Home />} /> */}
+          {/* <Route path="/profile" element={<Profile />} /> */}
           <Route path="/create-campaign" element={<CreateCampaign />} />
           <Route path="/campaign-details/:id" element={<CampaignDetails />} />
           <Route path="/reg-form" element={<RegForm />} />
-
+          <Route path="/profile-page" element={<UserProfile />} />
         </Routes>
       </div>
     </div>
@@ -70,7 +70,6 @@ const App = () => {
 };
 
 export default App;
-
 
 // import React from "react";
 // import { Route, Routes, Navigate, useLocation } from "react-router-dom";
@@ -111,5 +110,3 @@ export default App;
 // };
 
 // export default App;
-
-
