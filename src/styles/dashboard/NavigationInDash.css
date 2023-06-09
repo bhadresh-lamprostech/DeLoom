@@ -4,7 +4,12 @@
   color: #ffffff;
   background-color: #828282;
   padding: 10px 24px;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
+}
+.new-video-btn:hover {
+  color: #ffffff;
+  background-color: #b1afaf;
+  transition: 0.3s;
 }
 
 .dash-navbar-container {
