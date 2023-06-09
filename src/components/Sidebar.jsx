@@ -28,7 +28,7 @@ const Sidebar = () => {
   const [isActive, setIsActive] = useState("dashboard");
 
   return (
-    <div className=" p-3 ">
+    <div className="p-3">
       <div className="flex justify-between item-center flex-col sticky top-5 h-[93vh]">
         <Link to="/">
           <Icon styles="w-[52px] h-[52px] bg-[32c2f32]" imgUrl={logo} />
