@@ -2,11 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './LandingPage.css';
 import heroicon from '../../assets/heroicon.svg';
-
+import { useNavigate } from 'react-router-dom';
 const LendingPageHero = () => {
+
+  const navigate = useNavigate();
   return (
     <div>
-      <section className="dark:bg-gray-200 dark:text-gray-100 h-full weavebg">
+      <section className="dark:bg-gray-200 dark:text-gray-100 h-screen weavebg">
         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
           <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
             <h1 className="text-5xl font-bold leading-none sm:text-6xl">
@@ -18,8 +20,8 @@ const LendingPageHero = () => {
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
               <a
                 rel="noopener noreferrer"
-                href="#"
                 className="px-8 py-3 text-lg font-semibold rounded dark:bg-green-400 dark:text-gray-900 hover:bg-blue-500 hover:text-white transition duration-300"
+              onClick={()=>{navigate('/home')}}
               >
                 Get Started
               </a>
