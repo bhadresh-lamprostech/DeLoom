@@ -3,33 +3,32 @@ import axios from "axios";
 import MainDashboard from "../components/dashboard/MainDashboard";
 import { useAccount } from "wagmi";
 import { ConnectKitButton } from "connectkit";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const { isConnecting, isDisconnected, address } = useAccount();
   const [isLoading, setIsLoading] = useState(true);
   // const walletAddress = "0x3013bb4E03a7B81106D69C10710EaE148C8410E1";
-  const walletAddress = address
-  console.log(walletAddress)
+  const walletAddress = address;
+  console.log(walletAddress);
   const [dataAddress, setDataAddress] = useState("");
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const fetchData = async () => {
       if (walletAddress) {
         let config = {
-          method: 'get',
+          method: "get",
           maxBodyLength: Infinity,
-          url: `http://localhost:3002/readdata?address=${walletAddress}`,
-          headers: {}
+          url: `http://192.168.1.40:3002/readdata?address=${walletAddress}`,
+          // url: `http://localhost:3002/readdata?address=${walletAddress}`,
+          headers: {},
         };
 
         try {
           const response = await axios.request(config);
           const fetchedData = response.data;
-          setDataAddress(fetchedData[0].address); 
+          setDataAddress(fetchedData[0].address);
           console.log(dataAddress);
 
           if (walletAddress === fetchedData[0].address) {
@@ -57,29 +56,34 @@ function Home() {
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="bg-white w-96 p-4 rounded-lg shadow-lg">
                 <h2 className="text-lg font-bold mb-4">Loading...</h2>
-                <p className="mb-4">Please wait while the data is being fetched.</p>
+                <p className="mb-4">
+                  Please wait while the data is being fetched.
+                </p>
               </div>
             </div>
           ) : (
             <>
               {walletAddress === dataAddress ? (
-                  <MainDashboard />
-             
+                <MainDashboard />
               ) : (
                 <div className="fixed inset-0 flex items-center justify-center z-50">
-                <div className="bg-white w-96 p-4 rounded-lg shadow-lg">
-                  <h2 className="text-lg font-bold mb-4">You're missing out! 😔 Register now </h2>
-                  <p className="mb-4">
-Don't miss out on the action - click here to register</p>
-                  <div className="flex justify-end">
-                    
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded-md" onClick={() => navigate("/reg-form")} >
-                      Click here to Registration
-                    </button>
+                  <div className="bg-white w-96 p-4 rounded-lg shadow-lg">
+                    <h2 className="text-lg font-bold mb-4">
+                      You're missing out! 😔 Register now{" "}
+                    </h2>
+                    <p className="mb-4">
+                      Don't miss out on the action - click here to register
+                    </p>
+                    <div className="flex justify-end">
+                      <button
+                        className="bg-blue-500 text-white px-4 py-2 rounded-md"
+                        onClick={() => navigate("/reg-form")}
+                      >
+                        Click here to Registration
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              
               )}
             </>
           )}

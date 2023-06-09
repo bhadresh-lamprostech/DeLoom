@@ -1,7 +1,9 @@
 import React from "react";
 import "../../styles/profilePage/ProfilePage.css";
+import { useNavigate } from "react-router-dom";
 
 function ProfilePage() {
+  const navigate = useNavigate();
   const userProfile = {
     name: "John Doe",
     username: "john012",
@@ -10,6 +12,7 @@ function ProfilePage() {
   };
 
   const handleCreateWorkspace = () => {
+    navigate("/create-workspace");
     console.log("Creating workspace...");
   };
 

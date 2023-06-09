@@ -29,7 +29,7 @@ const NavigationInDash = () => {
         return <WorkspacesPage />;
       // Add more cases here for additional pages
       default:
-        return null;
+        return <MyVideosPage />;
     }
   };
 
@@ -58,8 +58,8 @@ const NavigationInDash = () => {
             New Video
           </button>
         </ul>
+        <div className="">{renderPage()}</div>
       </div>
-      {renderPage()}
     </>
   );
 };
