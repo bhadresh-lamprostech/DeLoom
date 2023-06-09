@@ -22,7 +22,7 @@ function Home() {
         let config = {
           method: 'get',
           maxBodyLength: Infinity,
-          url: `http://localhost:3002/readdata?address=${walletAddress}`,
+          url: `http://localhost:3001/readdata?address=${walletAddress}`,
           headers: {}
         };
 
