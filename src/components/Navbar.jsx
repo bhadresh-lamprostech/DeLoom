@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { ConnectKitButton } from "connectkit";
 
-
-
 // import { useStateContext } from '../context';
 import { logo, menu, search } from "../assets";
 import { navlinks } from "../constants";
@@ -12,8 +10,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState("dashboard");
   const [toogleDrawer, setToogleDrawer] = useState("false");
-
-  
 
   return (
     // <div className="sm:pr-5 p-4">
@@ -41,7 +37,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="sm:flex hidden flex-row justify-end gap-4">
-        <ConnectKitButton/>
+          <ConnectKitButton />
         </div>
         {/* small screen  */}
         <div className="sm:hidden flex justify-between items-center relative">
@@ -102,8 +98,7 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex mx-4">
-              <ConnectKitButton/>
-       
+              <ConnectKitButton />
             </div>
           </div>
         </div>
