@@ -1,14 +1,28 @@
 import React, { useState } from "react";
+import { Web3Storage } from "web3.storage";
+import axios from "axios";
+import { useAccount } from "wagmi";
+import { useNavigate } from "react-router-dom";
 
 const RegForm = () => {
   const [logoPreview, setLogoPreview] = useState(null);
+  const [imageCid, setImageCid] = useState();
   const [formData, setFormData] = useState({
+    id: Math.floor(Math.random() * 9000) + 1000,
     firstName: "",
     lastName: "",
     username: "",
     email: "",
     logo: null,
   });
+  const client = new Web3Storage({
+    token:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGRDOGI5MDZiNUIyMjJFM2Y4MTUzRTI1OEE3OEFGNzZCQkU2NDdGYzgiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2Nzg4NjMwMDQ2MzcsIm5hbWUiOiJkZW1vYWJjIn0.2L8rKiCD-eVUwuxz1AFXy6fy5Foh71QZQLZXe5QedcU",
+  });
+  const { address } = useAccount();
+  const walletAddress = address;
+
+  const navigate = useNavigate();
 
   const handleLogoChange = (e) => {
     const file = e.target.files[0];
@@ -23,6 +37,7 @@ const RegForm = () => {
         logo: file,
       });
     }
+    logoUpload();
   };
 
   const handleInputChange = (e) => {
@@ -32,10 +47,47 @@ const RegForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const logoUpload = async () => {
+    const fileInput = document.querySelector('input[type="file"]');
+    const rootCid = await client.put(fileInput.files, {
+      name: "logo_image",
+      maxRetries: 3,
+    });
+
+    const res = await client.get(rootCid); // Web3Response
+    const files = await res.files(logoPreview); // Web3File[]
+    for (const file of files) {
+      setImageCid(`${file.cid}`);
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+    await logoUpload();
+    // await imageCid
+
+    console.log(formData); // Log the form data
+
+    const data = {
+      id: formData.id,
+      firstname: formData.firstName,
+      lastname: formData.lastName,
+      username: formData.username,
+      email: formData.email,
+      logocid: imageCid,
+      address: walletAddress,
+    };
+
+    axios
+      .post("http://localhost:3001/insertuserdata", data)
+      .then((response) => {
+        console.log(response.data);
+        navigate("/profile-page");
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
