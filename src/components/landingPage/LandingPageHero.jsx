@@ -1,41 +1,53 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LandingPage.css';
+import heroicon from '../../assets/heroicon.svg';
 import { useNavigate } from 'react-router-dom';
+const LendingPageHero = () => {
 
-
-function LandingPageHero() {
-    const navigate = useNavigate();
-
+  const navigate = useNavigate();
   return (
-    <>
-    <div className="bg-gray-100 min-h-screen">
-    <section className="container mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h1 className="text-4xl font-bold mb-4">Welcome to Our Landing Service</h1>
-          <p className="text-gray-700 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ligula eu
-            interdum mollis. Mauris fermentum est id purus cursus, ac consectetur orci eleifend.
-            Integer convallis, massa vel ultrices tempus, dolor lectus vestibulum nisi, eu
-            tristique arcu augue in ex.
-          </p>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-          onClick={() => navigate("/home")}
-          >
-            Get Started
-          </button>
+    <div>
+      <section className="dark:bg-gray-200 dark:text-gray-100 h-screen weavebg">
+        <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+          <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+            <h1 className="text-5xl font-bold leading-none sm:text-6xl">
+              Vid<span className="dark:text-green-400">Weave</span>
+            </h1>
+            <p className="mt-6 mb-8 text-lg sm:mb-12">
+              Description (Introducing the decentralized loom—a groundbreaking technology that puts users in control. Built on blockchain and distributed ledger principles, it enables secure data storage, seamless communication, and peer-to-peer transactions. Say goodbye to intermediaries and embrace a new era of digital empowerment)
+            </p>
+            <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+              <a
+                rel="noopener noreferrer"
+                className="px-8 py-3 text-lg font-semibold rounded dark:bg-green-400 dark:text-gray-900 hover:bg-blue-500 hover:text-white transition duration-300"
+              onClick={()=>{navigate('/home')}}
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+          <div className="flex items-center justify-center p-6 mt-8 lg:mt-0">
+            <motion.img
+              src={heroicon}
+              alt="logo of vidweave"
+              className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+            />
+          </div>
         </div>
-        <div>
-          <img
-            src="https://placehold.it/400x300"
-            alt="Lending"
-            className="w-full h-auto"
-          />
-        </div>
-      </div>
-    </section>
-  </div>
-  </>
-  )
-}
 
-export default LandingPageHero
+        <div className="wavea"></div>
+        <div className="wavea"></div>
+        <div className="wavea"></div>
+      </section>
+
+      <footer className="bg-gray-800 py-4 text-white text-center">
+        <p>&copy; {new Date().getFullYear()} VidWeave. All Rights Reserved.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default LendingPageHero;
