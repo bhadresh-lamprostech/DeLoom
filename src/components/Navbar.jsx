@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { CustomButton } from "./";
+
+import { ConnectKitButton } from "connectkit";
+
 // import { useStateContext } from '../context';
 import { logo, menu, search } from "../assets";
 import { navlinks } from "../constants";
@@ -10,9 +12,10 @@ const Navbar = () => {
   const [toogleDrawer, setToogleDrawer] = useState("false");
 
   return (
-    <div className="sm:pr-5 p-4">
+    // <div className="sm:pr-5 p-4">
+    <div className="sm:pr-5 p-4 sticky top-0 bg-[#13131a] z-10">
       <div
-        className="flex md:flex-row flex-col-reverse justify-between mb-[35px]
+        className="flex md:flex-row flex-col-reverse justify-between mb-[20px]
     gap-6"
       >
         <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#1c1c24] rounded-[100px]">
@@ -33,7 +36,9 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <div className="sm:flex hidden flex-row justify-end gap-4"></div>
+        <div className="sm:flex hidden flex-row justify-end gap-4">
+          <ConnectKitButton />
+        </div>
         {/* small screen  */}
         <div className="sm:hidden flex justify-between items-center relative">
           <div
@@ -93,15 +98,7 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex mx-4">
-              {/* <CustomButton
-              btnType="button"
-              title={address ? 'create a campaign' :'Connect'}
-              styles ={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
-              handleClick={()=>{
-                if(address) navigate('create-campaign')
-                else connect();
-              }}
-              /> */}
+              <ConnectKitButton />
             </div>
           </div>
         </div>

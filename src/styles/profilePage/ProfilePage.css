@@ -1,0 +1,70 @@
+.ProfilePageMainClass {
+  height: 80vh;
+  padding: 2%;
+}
+
+.ProfilePhotoClass {
+  text-align: center;
+  padding-left: 2%;
+}
+
+.profile-photo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 3%;
+}
+
+@media (max-width: 768px) {
+  .profile-photo {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+@media (min-width: 768px) {
+  .profile-photo {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-photo {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+.ProfileHead {
+  padding: 2%;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.UserProfileDetails {
+  margin-bottom: 1%;
+  margin-left: 1%;
+  padding: 1rem;
+}
+
+.createWSClass {
+  margin: 2.5%;
+  text-align: right;
+}
+
+.createWorkspaceBtn {
+  border-radius: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  /* background-color: #151212;
+  color: rgb(255, 255, 255); */
+}
+
+.UserProfileDetails > * {
+  margin-bottom: 1rem;
+}
