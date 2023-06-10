@@ -4,6 +4,10 @@ import axios from "axios";
 import { useAccount } from "wagmi";
 import { useNavigate } from "react-router-dom";
 
+const client = new Web3Storage({
+  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGRDOGI5MDZiNUIyMjJFM2Y4MTUzRTI1OEE3OEFGNzZCQkU2NDdGYzgiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2Nzg4NjMwMDQ2MzcsIm5hbWUiOiJkZW1vYWJjIn0.2L8rKiCD-eVUwuxz1AFXy6fy5Foh71QZQLZXe5QedcU",
+});
+
 const RegForm = () => {
   const [logoPreview, setLogoPreview] = useState(null);
   const [imageCid, setImageCid] = useState();
@@ -15,10 +19,8 @@ const RegForm = () => {
     email: "",
     logo: null,
   });
-  const client = new Web3Storage({
-    token:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGRDOGI5MDZiNUIyMjJFM2Y4MTUzRTI1OEE3OEFGNzZCQkU2NDdGYzgiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2Nzg4NjMwMDQ2MzcsIm5hbWUiOiJkZW1vYWJjIn0.2L8rKiCD-eVUwuxz1AFXy6fy5Foh71QZQLZXe5QedcU",
-  });
+  const [isLogoUploading, setIsLogoUploading] = useState(false);
+  const [isFormSubmitting, setIsFormSubmitting] = useState(false);
   const { address } = useAccount();
   const walletAddress = address;
 
@@ -48,25 +50,28 @@ const RegForm = () => {
   };
 
   const logoUpload = async () => {
+    setIsLogoUploading(true);
+
     const fileInput = document.querySelector('input[type="file"]');
     const rootCid = await client.put(fileInput.files, {
       name: "logo_image",
       maxRetries: 3,
     });
 
-    const res = await client.get(rootCid); // Web3Response
-    const files = await res.files(logoPreview); // Web3File[]
+    const res = await client.get(rootCid);
+    const files = await res.files(logoPreview);
     for (const file of files) {
       setImageCid(`${file.cid}`);
     }
+
+    setIsLogoUploading(false);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await logoUpload();
-    // await imageCid
+    setIsFormSubmitting(true);
 
-    console.log(formData); // Log the form data
+    await logoUpload();
 
     const data = {
       id: formData.id,
@@ -84,9 +89,11 @@ const RegForm = () => {
         console.log(response.data);
         navigate("/profile-page");
       })
-
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setIsFormSubmitting(false);
       });
   };
 
@@ -101,6 +108,7 @@ const RegForm = () => {
           registration.
         </p>
         <div className="flex flex-wrap -mx-3 mb-6">
+          {/* First Name */}
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
@@ -121,6 +129,7 @@ const RegForm = () => {
               Please fill out this field.
             </p>
           </div>
+          {/* Last Name */}
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
@@ -140,6 +149,7 @@ const RegForm = () => {
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
+          {/* Username */}
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
@@ -160,6 +170,7 @@ const RegForm = () => {
               Please fill out this field.
             </p>
           </div>
+          {/* Email */}
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
@@ -182,6 +193,7 @@ const RegForm = () => {
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
+          {/* Logo Upload */}
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
@@ -193,28 +205,29 @@ const RegForm = () => {
               className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-logo"
               type="file"
-              accept="image/jpeg, image/png"
+              accept="image/*"
               onChange={handleLogoChange}
             />
-            <p className="text-gray-300 text-xs italic">
-              Accepted formats: JPEG, PNG
-            </p>
+            {isLogoUploading && <div>Loading logo...</div>}
             {logoPreview && (
               <img
                 src={logoPreview}
                 alt="Logo Preview"
-                className="w-32 h-32 mt-4 rounded-lg"
+                className="w-32 h-32 object-contain"
               />
             )}
           </div>
         </div>
-        <button
-          type="submit"
-          className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-          onClick={handleSubmit}
-        >
-          Submit
-        </button>
+        <div className="flex justify-center">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+            onClick={handleSubmit}
+            disabled={isFormSubmitting}
+          >
+            {isFormSubmitting ? "Submitting..." : "Submit"}
+          </button>
+        </div>
       </form>
     </div>
   );
