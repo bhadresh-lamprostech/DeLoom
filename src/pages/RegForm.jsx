@@ -79,7 +79,7 @@ const RegForm = () => {
     };
 
     axios
-      .post("http://localhost:3001/insertuserdata", data)
+      .post("https://vidapi-ten.vercel.app/insertuserdata", data)
       .then((response) => {
         console.log(response.data);
         navigate("/profile-page");
