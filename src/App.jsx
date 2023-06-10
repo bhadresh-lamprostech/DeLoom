@@ -8,6 +8,8 @@ import UserProfile from "./pages/UserProfile";
 import MainDashboard from "./components/dashboard/MainDashboard";
 import WorkspacesPage from "./components/dashboard/WorkspacesPage";
 import CreateWorkspace from "./pages/CreateWorkspace";
+import UserWorkspace from "./pages/UserWorkspace";
+import VideoDetailsPage from "./components/videoPages/VideoDetailsPage";
 
 const App = () => {
   const location = useLocation();
@@ -40,6 +42,9 @@ const App = () => {
             <Route path="/campaign-details/:id" element={<CampaignDetails />} />
             <Route path="/reg-form" element={<RegForm />} />
             <Route path="/profile-page" element={<UserProfile />} />
+            <Route path="/workspace-page" element={<UserWorkspace />} />
+            <Route path="/video-page/" element={<VideoDetailsPage />} />
+            {/* <Route path="/video-page/:videoId" element={<VideoDetailsPage />} /> */}
           </Routes>
         </div>
       </div>

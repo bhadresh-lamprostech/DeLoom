@@ -24,13 +24,31 @@ function CreateWS() {
     }
   };
 
+  // const handleInputChange = (e, index) => {
+  //   const updatedInputs = [...formData.additionalInputs];
+  //   updatedInputs[index] = e.target.value;
+  //   setFormData({
+  //     ...formData,
+  //     additionalInputs: updatedInputs,
+  //   });
+  // };
+
   const handleInputChange = (e, index) => {
-    const updatedInputs = [...formData.additionalInputs];
-    updatedInputs[index] = e.target.value;
-    setFormData({
-      ...formData,
-      additionalInputs: updatedInputs,
-    });
+    if (index === undefined) {
+      // Handling workspace input change
+      setFormData({
+        ...formData,
+        workspace: e.target.value,
+      });
+    } else {
+      // Handling additional inputs change
+      const updatedInputs = [...formData.additionalInputs];
+      updatedInputs[index] = e.target.value;
+      setFormData({
+        ...formData,
+        additionalInputs: updatedInputs,
+      });
+    }
   };
 
   const addInput = () => {
@@ -84,10 +102,11 @@ function CreateWS() {
                   className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-username"
                   type="text"
-                  placeholder="johnSpace"
+                  placeholder="John's Workspace"
                   name="workspace"
                   value={formData.workspace}
-                  onChange={handleInputChange}
+                  // onChange={handleInputChange}
+                  onChange={(e) => handleInputChange(e)}
                 />
               </div>
             </div>

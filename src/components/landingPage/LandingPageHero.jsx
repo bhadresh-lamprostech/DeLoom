@@ -1,10 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LandingPage.css';
-import heroicon from '../../assets/heroicon.svg';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { motion } from "framer-motion";
+import "./LandingPage.css";
+import heroicon from "../../assets/heroicon.svg";
+import { useNavigate } from "react-router-dom";
 const LendingPageHero = () => {
-
   const navigate = useNavigate();
   return (
     <div>
@@ -15,16 +14,23 @@ const LendingPageHero = () => {
               Vid<span className="dark:text-green-400">Weave</span>
             </h1>
             <p className="mt-6 mb-8 text-lg sm:mb-12">
-              Description (Introducing the decentralized loom—a groundbreaking technology that puts users in control. Built on blockchain and distributed ledger principles, it enables secure data storage, seamless communication, and peer-to-peer transactions. Say goodbye to intermediaries and embrace a new era of digital empowerment)
+              Description (Introducing the decentralized loom—a groundbreaking
+              technology that puts users in control. Built on blockchain and
+              distributed ledger principles, it enables secure data storage,
+              seamless communication, and peer-to-peer transactions. Say goodbye
+              to intermediaries and embrace a new era of digital empowerment)
             </p>
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-              <a
+              <button
+                type="button"
                 rel="noopener noreferrer"
                 className="px-8 py-3 text-lg font-semibold rounded dark:bg-green-400 dark:text-gray-900 hover:bg-blue-500 hover:text-white transition duration-300"
-              onClick={()=>{navigate('/home')}}
+                onClick={() => {
+                  navigate("/home");
+                }}
               >
                 Get Started
-              </a>
+              </button>
             </div>
           </div>
           <div className="flex items-center justify-center p-6 mt-8 lg:mt-0">

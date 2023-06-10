@@ -50,29 +50,6 @@ function MyVideosPage() {
   ];
 
   return (
-    // <div className="video-page mt-4">
-    //   {videos.map((video) => (
-    //     <VideoCard
-    //       key={video.id}
-    //       title={video.title}
-    //       description={video.description}
-    //       thumbnail={video.thumbnail}
-    //     />
-    //   ))}
-    // </div>
-
-    // <div className="video-page mt-4">
-    //   <div className="video-page-container">
-    //     {videos.map((video) => (
-    //       <VideoCard
-    //         key={video.id}
-    //         title={video.title}
-    //         description={video.description}
-    //         thumbnail={video.thumbnail}
-    //       />
-    //     ))}
-    //   </div>
-    // </div>
     <>
       <div className="video-page mt-4">
         <div className="video-page-container">

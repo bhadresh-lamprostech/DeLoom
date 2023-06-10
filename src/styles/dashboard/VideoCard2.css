@@ -1,13 +1,4 @@
-/* .video-card {
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-} */
-
-.thumbnail {
+/* .thumbnail {
   flex: 0 0 auto;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
@@ -78,7 +69,6 @@ p {
 
 .view-more-button p::before {
   position: absolute;
-  /* box-sizing: border-box; */
   content: "Open";
   width: 0%;
   inset: 0;
@@ -114,7 +104,6 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  /* Optional styles */
   max-height: 3.6em;
   line-height: 1.8em;
 }
@@ -125,7 +114,6 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
-  /* Optional styles */
   max-height: 3.6em;
   line-height: 1.8em;
 }
@@ -182,4 +170,4 @@ p {
   right: 0;
   bottom: 0;
   z-index: 1;
-}
+} */

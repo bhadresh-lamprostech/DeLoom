@@ -31,7 +31,7 @@ function ProfilePage() {
 
   return (
     <>
-      <div className="ProfilePageMainClass text-white">
+      <div className="ProfilePageMainClass bg-[#1c1c24] text-white">
         {/* <div className="ProfilePageMainClass bg-white text-black"> */}
         {userProfile ? (
           <div>
