@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+// import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+
 import { Sidebar, Navbar } from "./components";
 import { CampaignDetails, CreateCampaign, Home, Profile } from "./pages";
 import LandingPage from "./pages/Landingpage";
@@ -10,6 +18,7 @@ import WorkspacesPage from "./components/dashboard/WorkspacesPage";
 import CreateWorkspace from "./pages/CreateWorkspace";
 import UserWorkspace from "./pages/UserWorkspace";
 import VideoDetailsPage from "./components/videoPages/VideoDetailsPage";
+// import VideoDetail from "./components/videoPages/VideoDetailsPage";
 
 const App = () => {
   const location = useLocation();
@@ -68,9 +77,10 @@ const App = () => {
               path="/video-page/:videoId"
               element={<VideoDetailsPage videos={videos} />}
             />
+
             {/* <Route
               path="/video-page/:videoId"
-              element={<VideoDetailsPage videos={videos} />}
+              component={<VideoDetailsPage />}
             /> */}
           </Routes>
         </div>

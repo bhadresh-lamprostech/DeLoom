@@ -8,7 +8,7 @@ function MainDashboard() {
       {/* <div className="DashboardPageMainClass bg-white text-black"> */}
       <div className="DashboardPageMainClass bg-[#1c1c24] text-white">
         <div className="Dashboard-head">
-          <b className="Dashboard-head-name">My Library</b>
+          <b className="Dashboard-head-name mt-3 mb-2">My Library</b>
         </div>
         <div className="mt-3 mb-3">
           <hr />

@@ -10,6 +10,7 @@ function MyVideosPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ function MyVideosPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 3,
@@ -24,6 +26,7 @@ function MyVideosPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 4,
@@ -31,6 +34,7 @@ function MyVideosPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 5,
@@ -38,6 +42,7 @@ function MyVideosPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 6,
@@ -45,13 +50,14 @@ function MyVideosPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     // Add more video objects as needed
   ];
 
   return (
     <>
-      <div className="video-page mt-4">
+      <div className="video-page">
         <div className="video-page-container">
           <VideoCard videos={videos} />
         </div>

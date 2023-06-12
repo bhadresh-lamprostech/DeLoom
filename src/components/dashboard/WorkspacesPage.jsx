@@ -1,5 +1,6 @@
 import React from "react";
 import VideoCard from "./VideoCard";
+import "../../styles/workspace/WorkspacesPage.css";
 
 function WorkspacesPage() {
   const videos = [
@@ -9,6 +10,7 @@ function WorkspacesPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 2,
@@ -16,6 +18,7 @@ function WorkspacesPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 3,
@@ -23,6 +26,7 @@ function WorkspacesPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 4,
@@ -30,6 +34,7 @@ function WorkspacesPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 5,
@@ -37,6 +42,7 @@ function WorkspacesPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     {
       id: 6,
@@ -44,31 +50,19 @@ function WorkspacesPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
     },
     // Add more video objects as needed
   ];
 
   return (
     <>
-      <div className="horizontal-list-container">
-        <div className="horizontal-list">
-          <div className="list-item">Item 1</div>
-          <div className="list-item">Item 2</div>
-          <div className="list-item">Item 3</div>
-          <div className="list-item">Item 4</div>
-          <div className="list-item">Item 5</div>
-          <div className="list-item">Item 6</div>
-          <div className="list-item">Item 7</div>
-          <div className="list-item">Item 8</div>
-          <div className="list-item">Item 9</div>
-          <div className="list-item">Item 10</div>
-        </div>
-      </div>
-      <div className="bg-black text-white">
-        {/* <div className="bg-white text-black"> */}
-        <div className="video-page mt-4">
+      <div className="text-white">
+        <div className="video-page-workspace">
           <div className="video-page-container">
-            <VideoCard videos={videos} />
+            <div className="WorkspacesListMainClass">
+              <VideoCard videos={videos} />
+            </div>
           </div>
         </div>
       </div>

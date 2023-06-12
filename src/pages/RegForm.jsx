@@ -126,6 +126,7 @@ const RegForm = () => {
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
+              required
             />
             {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.
@@ -147,6 +148,7 @@ const RegForm = () => {
               name="lastName"
               value={formData.lastName}
               onChange={handleInputChange}
+              required
             />
           </div>
         </div>
@@ -167,6 +169,7 @@ const RegForm = () => {
               name="username"
               value={formData.username}
               onChange={handleInputChange}
+              required
             />
             {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.
@@ -188,6 +191,7 @@ const RegForm = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
+              required
             />
             {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.
@@ -209,6 +213,7 @@ const RegForm = () => {
               type="file"
               accept="image/*"
               onChange={handleLogoChange}
+              required
             />
             {isLogoUploading && (
               <div className="text-white">Loading logo...</div>
@@ -225,7 +230,7 @@ const RegForm = () => {
         <div className="flex justify-center">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
+            type="submit"
             onClick={handleSubmit}
             disabled={isFormSubmitting}
           >
