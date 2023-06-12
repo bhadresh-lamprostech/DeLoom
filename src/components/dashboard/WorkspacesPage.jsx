@@ -50,6 +50,20 @@ function WorkspacesPage() {
 
   return (
     <>
+      <div className="horizontal-list-container">
+        <div className="horizontal-list">
+          <div className="list-item">Item 1</div>
+          <div className="list-item">Item 2</div>
+          <div className="list-item">Item 3</div>
+          <div className="list-item">Item 4</div>
+          <div className="list-item">Item 5</div>
+          <div className="list-item">Item 6</div>
+          <div className="list-item">Item 7</div>
+          <div className="list-item">Item 8</div>
+          <div className="list-item">Item 9</div>
+          <div className="list-item">Item 10</div>
+        </div>
+      </div>
       <div className="bg-black text-white">
         {/* <div className="bg-white text-black"> */}
         <div className="video-page mt-4">
