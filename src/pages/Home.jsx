@@ -20,7 +20,7 @@ function Home() {
         let config = {
           method: "get",
           maxBodyLength: Infinity,
-          url: `http://localhost:3001/readdata?address=${walletAddress}`,
+          url: `https://vidapi-ten.vercel.app/readdata?address=${walletAddress}`,
           headers: {},
         };
 
