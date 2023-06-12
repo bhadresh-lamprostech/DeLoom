@@ -13,9 +13,9 @@ function MainDashboard() {
         <div className="mt-3 mb-3">
           <hr />
         </div>
-        <>
+        <div className="navInDashMainClass">
           <NavigationInDash />
-        </>
+        </div>
       </div>
     </>
   );

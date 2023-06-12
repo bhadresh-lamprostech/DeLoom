@@ -5,15 +5,14 @@ import { useAccount } from "wagmi";
 
 function ProfilePage() {
   const [userProfile, setUserProfile] = useState(null);
-  const {address} = useAccount();
+  const { address } = useAccount();
 
   const handleCreateWorkspace = () => {
+    navigate("/create-workspace");
     console.log("Creating workspace...");
   };
   const walletAddress = address;
-  console.log(walletAddress)
-
-
+  console.log(walletAddress);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -40,7 +39,7 @@ function ProfilePage() {
             <div className="ProfileHead">PERSONAL PROFILE</div>
             <div className="ProfilePhotoClass">
               <img
-              src={"https://" + `${userProfile.logocid}` + ".ipfs.w3s.link"}
+                src={"https://" + `${userProfile.logocid}` + ".ipfs.w3s.link"}
                 // src='https://"${userProfile.logocid}"'
                 alt="Profile"
                 className="profile-photo"
