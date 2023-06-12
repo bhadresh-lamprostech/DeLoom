@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../styles/profilePage/ProfilePage.css";
 import { useAccount } from "wagmi";
+import { useNavigate } from "react-router-dom";
 
 function ProfilePage() {
+  const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState(null);
   const { address } = useAccount();
 
