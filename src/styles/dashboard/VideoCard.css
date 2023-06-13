@@ -27,7 +27,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   overflow-y: scroll;
-  height: 65vh;
+  height: 56vh;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
@@ -46,7 +46,7 @@
 
 .thumbnail {
   flex: 0 0 auto;
-  border-radius: 5px 5px 0 0;
+  border-radius: 15px 15px 0 0;
   overflow: hidden;
 }
 
@@ -156,18 +156,14 @@
 }
 
 .video-card {
-  /* border-radius: 5px; */
-  /* background-color: #f9f9f9;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-  background: rgba(79, 64, 64, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #e61d63, #ff2276);
+  box-shadow: 13px 13px 20px #bd1851, -13px -13px 20px #ff288b;
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   flex-direction: column;
   position: relative;
+  margin: 10% 5% 10% 0;
 }
 
 .menu-icon {

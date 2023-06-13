@@ -5,8 +5,8 @@ import NavigationInDash from "./NavigationInDash";
 function MainDashboard() {
   return (
     <>
-      {/* <div className="DashboardPageMainClass bg-white text-black"> */}
-      <div className="DashboardPageMainClass bg-[#1c1c24] text-white">
+      {/* <div className="DashboardPageMainClass bg-[#1c1c24] text-white"> */}
+      <div className="DashboardPageMainClass bg-[#ff206e] text-white">
         <div className="Dashboard-head">
           <b className="Dashboard-head-name mt-3 mb-2">My Library</b>
         </div>

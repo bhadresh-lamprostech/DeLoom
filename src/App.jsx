@@ -48,7 +48,7 @@ const App = () => {
 
   return (
     <>
-      <div className="relative sm:-8 bg-[#13131a] min-h-screen flex flex-row">
+      <div className="relative sm:-8 bg-[#ff83a5] min-h-screen flex flex-row">
         {/* Render the Sidebar component only if not on the landing page */}
         {!isLandingPage && (
           <div className="sm:flex hidden mr-2 relative">

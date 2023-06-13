@@ -5,6 +5,7 @@
   margin-right: 1.8rem;
   overflow: hidden;
   margin-left: 2%;
+  max-height: 84vh;
 }
 
 .Dashboard-head-name {
