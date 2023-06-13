@@ -5,7 +5,7 @@ import "../../styles/dashboard/NavigationInDash.css";
 // import "../../styles/dashboard/Popup.css";
 const NavigationInDash = () => {
   const [activeItem, setActiveItem] = useState(0);
-  const [currentPage, setCurrentPage] = useState('MyVideos');
+  const [currentPage, setCurrentPage] = useState("MyVideos");
   const [popupOpen, setPopupOpen] = useState(false);
   const [recording, setRecording] = useState(false);
   const [stream, setStream] = useState(null);
@@ -14,8 +14,8 @@ const NavigationInDash = () => {
   const videoRef = useRef(null);
 
   const navItems = [
-    { label: 'My Videos', page: 'MyVideos' },
-    { label: 'Workspaces', page: 'Workspaces' },
+    { label: "My Videos", page: "MyVideos" },
+    { label: "Workspaces", page: "Workspaces" },
   ];
 
   const handleItemClick = (index, page) => {
@@ -25,9 +25,9 @@ const NavigationInDash = () => {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'MyVideos':
+      case "MyVideos":
         return <MyVideosPage />;
-      case 'Workspaces':
+      case "Workspaces":
         return <WorkspacesPage />;
       default:
         return <MyVideosPage />;
@@ -38,8 +38,10 @@ const NavigationInDash = () => {
     setPopupOpen(true);
   };
 
-  const handleClosePopup = () => {
+  const handleClosePopup = (e) => {
     setPopupOpen(false);
+    // window.location.reload();
+    setVideoUrl(null);
   };
 
   const startRecording = async () => {
@@ -55,7 +57,7 @@ const NavigationInDash = () => {
       const chunks = [];
       mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
       mediaRecorder.onstop = () => {
-        const blob = new Blob(chunks, { type: 'video/webm' });
+        const blob = new Blob(chunks, { type: "video/webm" });
         const videoUrl = URL.createObjectURL(blob);
         setVideoUrl(videoUrl);
         setRecording(false);
@@ -65,7 +67,7 @@ const NavigationInDash = () => {
       setRecording(true);
       setStream(mediaStream);
     } catch (error) {
-      console.error('Error accessing screen:', error);
+      console.error("Error accessing screen:", error);
     }
   };
 
@@ -85,7 +87,7 @@ const NavigationInDash = () => {
               <li
                 key={index}
                 onClick={() => handleItemClick(index, item.page)}
-                className={activeItem === index ? 'active' : ''}
+                className={activeItem === index ? "active" : ""}
               >
                 {item.label}
                 <span className="underline"></span>
@@ -101,7 +103,22 @@ const NavigationInDash = () => {
       {popupOpen && (
         <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-75">
           <div className="max-w-md mx-auto bg-white rounded-lg p-6">
-            <h3 className="text-lg font-bold mb-4">Screen Recording</h3>
+            <h3 className="text-lg text-black font-bold mb-4">
+              Screen Recording
+            </h3>
+
+            {videoUrl ? (
+              <video
+                className="my-3"
+                ref={videoRef}
+                src={videoUrl}
+                controls
+                autoPlay
+              />
+            ) : (
+              stream && <video ref={videoRef} srcObject={stream} autoPlay />
+            )}
+
             {!recording ? (
               <button
                 className="px-4 py-2 bg-blue-500 text-white rounded mr-2"
@@ -116,11 +133,6 @@ const NavigationInDash = () => {
               >
                 Stop Recording
               </button>
-            )}
-            {videoUrl ? (
-              <video ref={videoRef} src={videoUrl} controls autoPlay />
-            ) : (
-              stream && <video ref={videoRef} srcObject={stream} autoPlay />
             )}
             <button
               className="px-4 py-2 bg-gray-500 text-white rounded"

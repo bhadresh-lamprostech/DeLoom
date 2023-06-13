@@ -74,7 +74,7 @@
 }
 
 .view-more-button {
-  --primary-color: #111;
+  --primary-color: #f9f1f1;
   --hovered-color: #53d3cb;
   position: relative;
   display: flex;
@@ -152,13 +152,19 @@
   max-height: 3.6em;
   line-height: 1.8em;
   font-size: 15px;
-  color: #888;
+  color: #f5ebeb;
 }
 
 .video-card {
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* border-radius: 5px; */
+  /* background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  background: rgba(79, 64, 64, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -207,4 +213,26 @@
   right: 0;
   bottom: 0;
   z-index: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .video-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .video-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .video-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }

@@ -85,7 +85,7 @@ const VideoCard = ({ videos }) => {
                 <div className="thumbnail">
                   <img src={video.thumbnail} alt={video.title} />
                 </div>
-                <div className="details text-black">
+                <div className="details">
                   <h4 className="">
                     <b>{video.workspaceName}</b>
                   </h4>
