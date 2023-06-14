@@ -2,7 +2,7 @@ import {
   createCampaign,
   dashboard,
   logout,
-  payment,
+  workspace,
   profile,
   withdraw,
 } from "../assets";
@@ -19,26 +19,25 @@ export const navlinks = [
     link: "/create-campaign",
   },
   {
-    name: "payment",
-    imgUrl: payment,
-    link: "/",
-    disabled: true,
+    name: "workspace",
+    imgUrl: workspace,
+    link: "/workspace-page",
   },
-  {
-    name: "withdraw",
-    imgUrl: withdraw,
-    link: "/",
-    disabled: true,
-  },
-  {
-    name: "profile",
-    imgUrl: profile,
-    link: "/profile-page",
-  },
-  {
-    name: "logout",
-    imgUrl: logout,
-    link: "/",
-    disabled: true,
-  },
+  // {
+  //   name: "withdraw",
+  //   imgUrl: withdraw,
+  //   link: "/",
+  //   disabled: true,
+  // },
+  // {
+  //   name: "profile",
+  //   imgUrl: profile,
+  //   link: "/profile-page",
+  // },
+  // {
+  //   name: "logout",
+  //   imgUrl: logout,
+  //   link: "/",
+  //   disabled: true,
+  // },
 ];

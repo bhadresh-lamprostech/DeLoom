@@ -1,6 +1,8 @@
 .DashboardPageMainClass {
   height: 80vh;
   padding: 2%;
+  border-radius: 2rem;
+  margin-right: 1.8rem;
 }
 
 .Dashboard-head-name {

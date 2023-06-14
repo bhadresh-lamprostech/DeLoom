@@ -1,0 +1,62 @@
+.sponsor-section {
+    background-color: #f59e9e;
+    color: #ffffff;
+    padding: 10px;
+   text-align: center;
+   ;
+  }
+  
+  .sponsor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cardtile{
+    font-size: 30px;
+
+  }
+ 
+  
+  .sponsor-card {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 300px;
+    text-overflow: ellipsis;
+  
+  }
+  
+  
+  @media (max-width: 768px) {
+    .sponsor-card {
+      width: calc(50% - 20px);
+    }
+  }
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px; 
+  }
+  
+  .sponsor-card img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .sponsor-section {
+    text-align: center;
+    font-size: 350%;
+    
+  }
+  
+  .sponsor-section h1 {
+    font-weight:bold;
+  }
+  @media (max-width: 768px) {
+    .sponsor-card {
+      width: calc(50% - 20px);
+    }
+  }

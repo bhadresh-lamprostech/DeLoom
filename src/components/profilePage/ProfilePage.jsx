@@ -18,7 +18,7 @@ function ProfilePage() {
     const fetchUserProfile = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/readdata?address=${walletAddress}`
+          `https://vidapi-ten.vercel.app/readdata?address=${walletAddress}`
         );
         setUserProfile(response.data[0]); // Access the first object in the array
       } catch (error) {
@@ -31,7 +31,7 @@ function ProfilePage() {
 
   return (
     <>
-      <div className="ProfilePageMainClass text-white">
+      <div className="ProfilePageMainClass bg-[#1c1c24] text-white">
         {/* <div className="ProfilePageMainClass bg-white text-black"> */}
         {userProfile ? (
           <div>

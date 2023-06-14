@@ -1,0 +1,32 @@
+.video-details-page {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.video-frame {
+  width: 75%;
+}
+
+.video-details {
+  width: 25%;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.video-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.video-description {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.comment-section {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}

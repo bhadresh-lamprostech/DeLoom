@@ -6,7 +6,7 @@ function MainDashboard() {
   return (
     <>
       {/* <div className="DashboardPageMainClass bg-white text-black"> */}
-      <div className="DashboardPageMainClass text-white">
+      <div className="DashboardPageMainClass bg-[#1c1c24] text-white">
         <div className="Dashboard-head">
           <b className="Dashboard-head-name">My Library</b>
         </div>
