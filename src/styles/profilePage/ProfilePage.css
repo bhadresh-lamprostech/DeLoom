@@ -68,3 +68,7 @@
 .UserProfileDetails > * {
   margin-bottom: 1rem;
 }
+
+.UserProfileDetails {
+  color: white !important;
+}

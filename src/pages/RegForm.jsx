@@ -5,7 +5,8 @@ import { useAccount } from "wagmi";
 import { useNavigate } from "react-router-dom";
 
 const client = new Web3Storage({
-  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGRDOGI5MDZiNUIyMjJFM2Y4MTUzRTI1OEE3OEFGNzZCQkU2NDdGYzgiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2Nzg4NjMwMDQ2MzcsIm5hbWUiOiJkZW1vYWJjIn0.2L8rKiCD-eVUwuxz1AFXy6fy5Foh71QZQLZXe5QedcU",
+  token:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGRDOGI5MDZiNUIyMjJFM2Y4MTUzRTI1OEE3OEFGNzZCQkU2NDdGYzgiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2Nzg4NjMwMDQ2MzcsIm5hbWUiOiJkZW1vYWJjIn0.2L8rKiCD-eVUwuxz1AFXy6fy5Foh71QZQLZXe5QedcU",
 });
 
 const RegForm = () => {
@@ -82,6 +83,7 @@ const RegForm = () => {
       logocid: imageCid,
       address: walletAddress,
     };
+    console.log(data);
 
     axios
       .post("https://vidapi-ten.vercel.app/insertuserdata", data)
@@ -114,7 +116,7 @@ const RegForm = () => {
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
               htmlFor="grid-first-name"
             >
-              First Name
+              First Name*
             </label>
             <input
               className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -124,10 +126,11 @@ const RegForm = () => {
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
+              required
             />
-            <p className="text-red-500 text-xs italic">
+            {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.
-            </p>
+            </p> */}
           </div>
           {/* Last Name */}
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -135,7 +138,7 @@ const RegForm = () => {
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
               htmlFor="grid-last-name"
             >
-              Last Name
+              Last Name*
             </label>
             <input
               className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -145,6 +148,7 @@ const RegForm = () => {
               name="lastName"
               value={formData.lastName}
               onChange={handleInputChange}
+              required
             />
           </div>
         </div>
@@ -155,7 +159,7 @@ const RegForm = () => {
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
               htmlFor="grid-username"
             >
-              Username
+              Username*
             </label>
             <input
               className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -165,10 +169,11 @@ const RegForm = () => {
               name="username"
               value={formData.username}
               onChange={handleInputChange}
+              required
             />
-            <p className="text-red-500 text-xs italic">
+            {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.
-            </p>
+            </p> */}
           </div>
           {/* Email */}
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -176,7 +181,7 @@ const RegForm = () => {
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
               htmlFor="grid-email"
             >
-              Email
+              Email*
             </label>
             <input
               className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -186,10 +191,11 @@ const RegForm = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
+              required
             />
-            <p className="text-red-500 text-xs italic">
+            {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
@@ -199,7 +205,7 @@ const RegForm = () => {
               className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
               htmlFor="grid-logo"
             >
-              Upload Logo
+              Upload Logo*
             </label>
             <input
               className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -207,8 +213,11 @@ const RegForm = () => {
               type="file"
               accept="image/*"
               onChange={handleLogoChange}
+              required
             />
-            {isLogoUploading && <div>Loading logo...</div>}
+            {isLogoUploading && (
+              <div className="text-white">Loading logo...</div>
+            )}
             {logoPreview && (
               <img
                 src={logoPreview}
@@ -221,7 +230,7 @@ const RegForm = () => {
         <div className="flex justify-center">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
+            type="submit"
             onClick={handleSubmit}
             disabled={isFormSubmitting}
           >

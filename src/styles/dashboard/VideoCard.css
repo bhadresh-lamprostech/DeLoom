@@ -1,9 +1,33 @@
+.video-list-main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-list-main-class {
+  background-color: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+  flex: 0 0 auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  margin-bottom: 2%;
+  border-radius: 1rem;
+}
+
+.video-list-scroll-container {
+  flex: 1 1 auto;
+  /* overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent; */
+}
+
 .video-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   overflow-y: scroll;
-  height: 53vh;
+  height: 56vh;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
@@ -22,7 +46,7 @@
 
 .thumbnail {
   flex: 0 0 auto;
-  border-radius: 5px 5px 0 0;
+  border-radius: 15px 15px 0 0;
   overflow: hidden;
 }
 
@@ -34,17 +58,6 @@
 
 .details {
   padding: 10px;
-}
-
-h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-p {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 10px;
 }
 
 .actions {
@@ -61,7 +74,7 @@ p {
 }
 
 .view-more-button {
-  --primary-color: #111;
+  --primary-color: #f9f1f1;
   --hovered-color: #53d3cb;
   position: relative;
   display: flex;
@@ -138,15 +151,19 @@ p {
   -webkit-line-clamp: 2;
   max-height: 3.6em;
   line-height: 1.8em;
+  font-size: 15px;
+  color: #f5ebeb;
 }
 
 .video-card {
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: linear-gradient(145deg, #e61d63, #ff2276);
+  box-shadow: 13px 13px 20px #bd1851, -13px -13px 20px #ff288b;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   flex-direction: column;
   position: relative;
+  margin: 10% 5% 10% 0;
 }
 
 .menu-icon {
@@ -192,4 +209,26 @@ p {
   right: 0;
   bottom: 0;
   z-index: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .video-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .video-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .video-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }

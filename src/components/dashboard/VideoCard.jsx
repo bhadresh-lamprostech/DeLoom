@@ -1,115 +1,10 @@
-// import React from "react";
-// import "../../styles/dashboard/VideoCard.css";
-// import VideoCard2 from "./VideoCard2";
-
-// const VideoCard = ({ title, description, thumbnail, videos }) => {
-//   return (
-//     <div className="video-list">
-//       {videos.map((video) => (
-//         <VideoCard2 key={video.id} video={video} />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default VideoCard;
-
-// import React, { useState, useEffect } from "react";
-// import "../../styles/dashboard/VideoCard.css";
-// import "../../styles/dashboard/VideoCard2.css";
-
-// const VideoCard = ({ videos }) => {
-//   const [showMenu, setShowMenu] = useState(false);
-
-//   const handleMenuClick = () => {
-//     setShowMenu(!showMenu);
-//   };
-
-//   useEffect(() => {
-//     const handleOutsideClick = (event) => {
-//       if (!event.target.closest(".video-card")) {
-//         setShowMenu(false);
-//       }
-//     };
-
-//     if (showMenu) {
-//       document.addEventListener("click", handleOutsideClick);
-//     }
-
-//     return () => {
-//       document.removeEventListener("click", handleOutsideClick);
-//     };
-//   }, [showMenu]);
-
-//   return (
-//     <div className="video-list">
-//       {videos.map((video) => (
-//         <div className="video-card" key={video.id}>
-//           <div className="menu-icon" onClick={handleMenuClick}>
-//             <svg
-//               strokeWidth="2"
-//               stroke="currentColor"
-//               viewBox="0 0 24 24"
-//               fill="none"
-//               className="h-6 w-6"
-//               xmlns="http://www.w3.org/2000/svg"
-//             >
-//               <circle cx="12" cy="12" r="1.5" />
-//               <circle cx="19" cy="12" r="1.5" />
-//               <circle cx="5" cy="12" r="1.5" />
-//             </svg>
-//           </div>
-//           {showMenu && (
-//             <>
-//               <div className="menu-options">
-//                 <ul>
-//                   <li>Option 1</li>
-//                   <li>Option 2</li>
-//                   <li>Option 3</li>
-//                 </ul>
-//               </div>
-//             </>
-//           )}
-//           <div className="thumbnail">
-//             <img src={video.thumbnail} alt={video.title} />
-//           </div>
-//           <div className="details text-black">
-//             <h4 className="video-title-mainClass">{video.title}</h4>
-//             <p className="video-desc-mainClass">{video.description}</p>
-//           </div>
-//           <div className="actions">
-//             <button className="view-more-button">
-//               <p>Open</p>
-//               <svg
-//                 strokeWidth="4"
-//                 stroke="currentColor"
-//                 viewBox="0 0 24 24"
-//                 fill="none"
-//                 className="h-6 w-6"
-//                 xmlns="http://www.w3.org/2000/svg"
-//               >
-//                 <path
-//                   d="M14 5l7 7m0 0l-7 7m7-7H3"
-//                   strokeLinejoin="round"
-//                   strokeLinecap="round"
-//                 ></path>
-//               </svg>
-//             </button>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default VideoCard;
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/dashboard/VideoCard.css";
-import "../../styles/dashboard/VideoCard2.css";
+import { useNavigate } from "react-router-dom";
 
 const VideoCard = ({ videos }) => {
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState({});
 
   const handleMenuClick = (videoId) => {
@@ -143,67 +38,92 @@ const VideoCard = ({ videos }) => {
   }, [showMenu, videos]);
 
   return (
-    <div className="video-list">
-      {videos.map((video) => (
-        <div
-          className="video-card"
-          key={video.id}
-          id={`video-card-${video.id}`}
-        >
-          <div className="menu-icon" onClick={() => handleMenuClick(video.id)}>
-            <svg
-              strokeWidth="2"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="12" cy="12" r="1.5" />
-              <circle cx="19" cy="12" r="1.5" />
-              <circle cx="5" cy="12" r="1.5" />
-            </svg>
-          </div>
-          {showMenu[video.id] && (
-            <>
-              <div className="menu-options">
-                <ul>
-                  <li>Option 1</li>
-                  <li>Option 2</li>
-                  <li>Option 3</li>
-                </ul>
-              </div>
-            </>
-          )}
-          <div className="thumbnail">
-            <img src={video.thumbnail} alt={video.title} />
-          </div>
-          <div className="details text-black">
-            <h4 className="video-title-mainClass">{video.title}</h4>
-            <p className="video-desc-mainClass">{video.description}</p>
-          </div>
-          <div className="actions">
-            <Link to={`/video-page/${video.id}`} className="view-more-button">
-              <p>Open</p>
-              <svg
-                strokeWidth="4"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                fill="none"
-                className="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
+    <>
+      <div className="video-list-main-container">
+        <div className="video-list-scroll-container">
+          <div className="video-list">
+            {/* <div className="video-list-main-class text-black ">
+              {workspaceName}
+              <p className="text-black">
+                Here you'll see all the videos uploaded in {workspaceName}
+              </p>
+            </div> */}
+            {videos.map((video) => (
+              <div
+                className="video-card"
+                key={video.id}
+                id={`video-card-${video.id}`}
               >
-                <path
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                ></path>
-              </svg>
-            </Link>
+                <div
+                  className="menu-icon"
+                  onClick={() => handleMenuClick(video.id)}
+                >
+                  <svg
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="1.5" />
+                    <circle cx="19" cy="12" r="1.5" />
+                    <circle cx="5" cy="12" r="1.5" />
+                  </svg>
+                </div>
+                {showMenu[video.id] && (
+                  <>
+                    <div className="menu-options">
+                      <ul>
+                        <li>Copy Link</li>
+                        <li>Download</li>
+                        {/* <li>Option 3</li> */}
+                      </ul>
+                    </div>
+                  </>
+                )}
+                <div className="thumbnail">
+                  <img src={video.thumbnail} alt={video.title} />
+                </div>
+                <div className="details">
+                  <h4 className="">
+                    <b>{video.workspaceName}</b>
+                  </h4>
+                  <h4 className="video-title-mainClass">{video.title}</h4>
+                  <p className="video-desc-mainClass ">{video.description}</p>
+                </div>
+                <div className="actions">
+                  <button
+                    onClick={() =>
+                      navigate(`/video-page/${video.id}`, {
+                        state: { data: video },
+                      })
+                    }
+                    className="view-more-button mb-3"
+                  >
+                    <p className="">Open</p>
+                    <svg
+                      strokeWidth="4"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="h-6 w-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 };
 

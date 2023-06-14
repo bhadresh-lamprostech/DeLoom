@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../styles/profilePage/ProfilePage.css";
 import { useAccount } from "wagmi";
+import { useNavigate } from "react-router-dom";
 
 function ProfilePage() {
+  const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState(null);
   const { address } = useAccount();
 
-  const handleCreateWorkspace = () => {
+  const handleCreateWorkspace = (e) => {
+    e.preventDefault();
     navigate("/create-workspace");
     console.log("Creating workspace...");
   };
@@ -45,7 +48,7 @@ function ProfilePage() {
                 className="profile-photo"
               />
             </div>
-            <div className="UserProfileDetails">
+            <div className="UserProfileDetails text-white">
               <h2>
                 <b>Name: </b> {userProfile.firstname} {userProfile.lastname}
               </h2>
