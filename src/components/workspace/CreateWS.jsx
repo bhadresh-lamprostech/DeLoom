@@ -1,13 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../../styles/workspace/CreateWS.css";
+import { useAccount } from "wagmi";
+import { Web3Storage } from "web3.storage";
+
+const client = new Web3Storage({
+  token:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGRDOGI5MDZiNUIyMjJFM2Y4MTUzRTI1OEE3OEFGNzZCQkU2NDdGYzgiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2Nzg4NjMwMDQ2MzcsIm5hbWUiOiJkZW1vYWJjIn0.2L8rKiCD-eVUwuxz1AFXy6fy5Foh71QZQLZXe5QedcU",
+});
 
 function CreateWS() {
   const [logoPreview, setLogoPreview] = useState(null);
+  const [imageCid, setImageCid] = useState();
   const [formData, setFormData] = useState({
     workspace: "",
     logo: null,
     additionalInputs: [""],
   });
+  const [creatorData, setCreatorData] = useState({
+    id: "",
+    creatorName: "",
+    creatorAddress: "",
+  });
+
+  const { address } = useAccount();
+  const walletAddress = address;
+
+  useEffect(() => {
+    const fetchCreatorData = async () => {
+      try {
+        const response = await axios.get(
+          ` http://localhost:3001/readdata?address=${walletAddress}`
+        );
+
+        const data = response.data[0];
+        console.log(data);
+        setCreatorData({
+          id: data.id,
+          creatorName: data.username,
+          creatorAddress: data.address,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchCreatorData();
+  }, []);
 
   const handleLogoChange = (e) => {
     const file = e.target.files[0];
@@ -24,15 +63,6 @@ function CreateWS() {
     }
   };
 
-  // const handleInputChange = (e, index) => {
-  //   const updatedInputs = [...formData.additionalInputs];
-  //   updatedInputs[index] = e.target.value;
-  //   setFormData({
-  //     ...formData,
-  //     additionalInputs: updatedInputs,
-  //   });
-  // };
-
   const handleInputChange = (e, index) => {
     if (index === undefined) {
       // Handling workspace input change
@@ -48,6 +78,20 @@ function CreateWS() {
         ...formData,
         additionalInputs: updatedInputs,
       });
+    }
+  };
+
+  const logoUpload = async () => {
+    const fileInput = document.querySelector('input[type="file"]');
+    const rootCid = await client.put(fileInput.files, {
+      name: "logo_image",
+      maxRetries: 3,
+    });
+
+    const res = await client.get(rootCid);
+    const files = await res.files(logoPreview);
+    for (const file of files) {
+      setImageCid(`${file.cid}`);
     }
   };
 
@@ -69,16 +113,45 @@ function CreateWS() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+  const handleSubmit = async (e) => {
+    // e.preventDefault();
+    await logoUpload();
+    console.log("logo uploaded..");
+
+    const formDataToSend = {
+      id: creatorData.id,
+      name: formData.workspace,
+      workspaceLogo: imageCid,
+      creatorName: creatorData.creatorName,
+      creatorAddress: creatorData.creatorAddress,
+    };
+
+    formData.additionalInputs.forEach((member, index) => {
+      formDataToSend[`member${index + 1}`] = member;
+    });
+
+    // Add additional members if needed
+    const remainingMembers = Math.max(0, 5 - formData.additionalInputs.length);
+    for (let i = 0; i < remainingMembers; i++) {
+      formDataToSend[`member${formData.additionalInputs.length + i + 1}`] = "0";
+    }
+
+    console.log("Form Data:", formDataToSend); // Log the form data
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/insertworkspacedata",
+        formDataToSend
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <>
       <div className="text-white p-5">
-        {/* <div className="createWorkspace-mainClass bg-white text-black"> */}
         <div>
           <h2 className="text-2xl font-bold mb-6">CREATE YOUR WORKSPACE</h2>
           <p className="text-gray-300 mb-6">
@@ -88,7 +161,6 @@ function CreateWS() {
         </div>
 
         <div className="">
-          {/* <form className="w-full max-w-lg bg-gray-800 p-6 rounded-lg shadow-lg"> */}
           <form className="p-5 w-full max-w-lg rounded-lg shadow-lg">
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -105,7 +177,6 @@ function CreateWS() {
                   placeholder="John's Workspace"
                   name="workspace"
                   value={formData.workspace}
-                  // onChange={handleInputChange}
                   onChange={(e) => handleInputChange(e)}
                 />
               </div>
