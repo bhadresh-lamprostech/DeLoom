@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ConnectKitButton } from "connectkit";
+import NotificationPage from "./push/NotificationPage";
 
 // import { useStateContext } from '../context';
 import { logo, menu, search, vidWeaveLogo } from "../assets";
@@ -99,6 +100,8 @@ const Navbar = () => {
                   </p>
                 </li>
               ))}
+
+           <NotificationPage/>
             </ul>
             <div className="flex mx-4">
               <ConnectKitButton />
