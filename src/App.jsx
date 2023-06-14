@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import { Sidebar, Navbar } from "./components";
-import { CampaignDetails, CreateCampaign, Home, Profile } from "./pages";
+import { CampaignDetails, Home, Profile } from "./pages";
 import LandingPage from "./pages/Landingpage";
 import RegForm from "./pages/RegForm";
 import UserProfile from "./pages/UserProfile";
@@ -18,6 +18,7 @@ import WorkspacesPage from "./components/dashboard/WorkspacesPage";
 import CreateWorkspace from "./pages/CreateWorkspace";
 import UserWorkspace from "./pages/UserWorkspace";
 import VideoDetailsPage from "./components/videoPages/VideoDetailsPage";
+import NotificationMainPage from "./pages/NotificationMainPage";
 // import VideoDetail from "./components/videoPages/VideoDetailsPage";
 
 const App = () => {
@@ -48,7 +49,7 @@ const App = () => {
 
   return (
     <>
-      <div className="relative sm:-8 bg-[#ff83a5] min-h-screen flex flex-row">
+      <div className="relative sm:-8 bg-[#fcfcfc] min-h-screen flex flex-row">
         {/* Render the Sidebar component only if not on the landing page */}
         {!isLandingPage && (
           <div className="sm:flex hidden mr-2 relative">
@@ -68,7 +69,10 @@ const App = () => {
             {/* <Route path="/profile" element={<Profile />} /> */}
             <Route path="/workspace" element={<WorkspacesPage />} />
             <Route path="/create-workspace" element={<CreateWorkspace />} />
-            <Route path="/create-campaign" element={<CreateCampaign />} />
+            <Route
+              path="/notification-page"
+              element={<NotificationMainPage />}
+            />
             <Route path="/campaign-details/:id" element={<CampaignDetails />} />
             <Route path="/reg-form" element={<RegForm />} />
             <Route path="/profile-page" element={<UserProfile />} />

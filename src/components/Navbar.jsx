@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ConnectKitButton } from "connectkit";
 
 // import { useStateContext } from '../context';
-import { logo, menu, search } from "../assets";
+import { logo, menu, search, vidWeaveLogo } from "../assets";
 import { navlinks } from "../constants";
 const Navbar = () => {
   const navigate = useNavigate();
@@ -11,13 +11,17 @@ const Navbar = () => {
   const [toogleDrawer, setToogleDrawer] = useState("false");
 
   return (
-    <div className="sm:pr-5 p-3 sticky top-0 bg-[#ff83a5] z-10">
-      {/* // <div className="sm:pr-5 p-4 sticky top-0 bg-[#13131a] z-10"> */}
+    //   style={{margin-bottom: 3%;
+    //     padding-bottom: 0;
+    // }}
+    <div className="sm:pr-5 p-3 pb-0 mb-5 sticky top-0 bg-[#ffffff] z-10">
+      {/*  <div className="sm:pr-5 p-4 sticky top-0 bg-[#13131a] z-10"> */}
       <div
         className="flex md:flex-row flex-col-reverse justify-between mb-[20px]
     gap-6"
       >
-        <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#1c1c24] rounded-[100px]">
+        {/* <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#ff83a5] rounded-[100px]"> */}
+        <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#a8a4a7] rounded-[100px]">
           <input
             type="text"
             placeholder="Search for workspaces"
@@ -25,7 +29,7 @@ const Navbar = () => {
          text-[14px] placeholder:text-[#4b5264] text-white bg-transparent outline-none"
           />
           <div
-            className="w-[72px] h-full rounded-[20px] bg-[#4acd8d] flex justify-center
+            className="w-[72px] h-full rounded-[20px] bg-[#ff83a5] flex justify-center
           items-center cursor-pointer"
           >
             <img
@@ -45,7 +49,7 @@ const Navbar = () => {
                 bg-[#2c2f32] flex justify-center items-center cursor-pointer"
           >
             <img
-              src={logo}
+              src={vidWeaveLogo}
               alt="user"
               className="w-[60%] h-[60%]
                     object-contain"

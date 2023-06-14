@@ -97,7 +97,7 @@ function WorkspacesPage() {
 
   return (
     <>
-      <div className="text-white">
+      <div className="">
         <div className="video-page-workspace">
           <div className="video-page-container">
             <div className="WorkspacesListMainClass">

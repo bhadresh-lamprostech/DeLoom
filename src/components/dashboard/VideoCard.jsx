@@ -85,23 +85,24 @@ const VideoCard = ({ videos }) => {
                 <div className="thumbnail">
                   <img src={video.thumbnail} alt={video.title} />
                 </div>
-                <div className="details">
+                {/* <div className="titleDescNameBtnMain"> */}
+                <div className="details ">
                   <h4 className="">
                     <b>{video.workspaceName}</b>
                   </h4>
                   <h4 className="video-title-mainClass">{video.title}</h4>
                   <p className="video-desc-mainClass ">{video.description}</p>
                 </div>
-                <div className="actions">
+                <div className="actions ">
                   <button
                     onClick={() =>
                       navigate(`/video-page/${video.id}`, {
                         state: { data: video },
                       })
                     }
-                    className="view-more-button mb-3"
+                    className="view-more-button  mb-3"
                   >
-                    <p className="">Open</p>
+                    <p className=" ">Open</p>
                     <svg
                       strokeWidth="4"
                       stroke="currentColor"
@@ -119,6 +120,7 @@ const VideoCard = ({ videos }) => {
                   </button>
                 </div>
               </div>
+              // </div>
             ))}
           </div>
         </div>

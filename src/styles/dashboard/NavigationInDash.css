@@ -2,13 +2,15 @@
   margin-left: auto;
   cursor: pointer;
   color: #ffffff;
-  background-color: #828282;
+  /* background-color: #828282; */
+  background-color: #ff83a5;
   padding: 10px 24px;
   border-radius: 1.5rem;
 }
 .new-video-btn:hover {
   color: #ffffff;
-  background-color: #b1afaf;
+  /* background-color: #b1afaf; */
+  background-color: #ff83a4bc;
   transition: 0.3s;
 }
 
@@ -28,7 +30,7 @@
   display: flex;
   list-style-type: none;
   justify-content: center; /* Center align the list items */
-  padding: 0;
+  padding: 10px;
 }
 
 .dash-navbar li {
@@ -49,12 +51,56 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #ffffff;
-  /* background-color: #000000; */
+  /* background-color: #ffffff; */
+  background-color: #000000;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
 .dash-navbar li.active .underline {
   opacity: 1;
+}
+
+/* ------------ */
+
+.save-form {
+  margin-top: 20px;
+  border-color: #000000;
+}
+
+.save-form h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.save-form label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.save-form input,
+.save-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.save-form button {
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.SaveRecordingInputFields {
+  background-color: bisque;
+  border: 2px solid #ffb1b1;
+  border-radius: 15px;
 }

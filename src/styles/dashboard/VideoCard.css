@@ -25,7 +25,8 @@
 .video-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  gap: 10px;
+  padding: 1%;
   overflow-y: scroll;
   height: 56vh;
   scrollbar-width: thin;
@@ -61,7 +62,7 @@
 }
 
 .actions {
-  padding: 10px;
+  padding: 7px 15px 8px 0px;
   display: flex;
   justify-content: flex-end;
 }
@@ -75,7 +76,7 @@
 
 .view-more-button {
   --primary-color: #f9f1f1;
-  --hovered-color: #53d3cb;
+  --hovered-color: #ffbc42;
   position: relative;
   display: flex;
   font-weight: 600;
@@ -100,6 +101,10 @@
   background: var(--hovered-color);
   height: 2px;
   transition: 0.2s ease-out;
+}
+
+.titleDescNameBtnMain {
+  /* background-color: #ff83a5; */
 }
 
 .view-more-button p::before {
@@ -157,13 +162,14 @@
 
 .video-card {
   border-radius: 15px;
-  background: linear-gradient(145deg, #e61d63, #ff2276);
-  box-shadow: 13px 13px 20px #bd1851, -13px -13px 20px #ff288b;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, #f5b3c5, #ec7587);
+  /* box-shadow: 13px 13px 20px #bd1851, -13px -13px 20px #ff288b; */
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  border: 1px solid #e4b8c4;
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 10% 5% 10% 0;
+  margin: 0% 12% 10% 0;
 }
 
 .menu-icon {
@@ -176,13 +182,14 @@
 .menu-options {
   position: absolute;
   top: 40px;
-  right: -25%;
+  right: -10%;
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(127, 122, 122, 0.895);
   padding: 7%;
   gap: 20px;
   z-index: 100;
+  overflow-x: visible;
 }
 
 .menu-options ul {

@@ -1,6 +1,8 @@
 .ProfilePageMainClass {
-  height: 80vh;
+  height: 83vh;
   padding: 2%;
+  border-radius: 2rem;
+  margin-right: 2%;
 }
 
 .ProfilePhotoClass {
