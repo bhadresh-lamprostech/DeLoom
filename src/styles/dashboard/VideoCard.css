@@ -76,7 +76,9 @@
 
 .view-more-button {
   --primary-color: #f9f1f1;
-  --hovered-color: #ffbc42;
+  /* --hovered-color: #ffbc42; */
+  /* --hovered-color: #e7f88f; */
+  --hovered-color: #e9e94d;
   position: relative;
   display: flex;
   font-weight: 600;

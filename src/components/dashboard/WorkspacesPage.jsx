@@ -5,6 +5,22 @@ import "../../styles/workspace/WorkspacesPage.css";
 function WorkspacesPage() {
   const videos = [
     {
+      id: 4,
+      title: "Lorem, ipsum dolor sit amet consectetur adip",
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
+      thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
+    },
+    {
+      id: 5,
+      title: "Video 5",
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
+      thumbnail: "src/assets/images/profilePhoto.jpg",
+      workspaceName: "Workspace Name",
+    },
+    {
       id: 1,
       title: "Video 1",
       description:
@@ -23,22 +39,6 @@ function WorkspacesPage() {
     {
       id: 3,
       title: "Video 3",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
-      thumbnail: "src/assets/images/profilePhoto.jpg",
-      workspaceName: "Workspace Name",
-    },
-    {
-      id: 4,
-      title: "Lorem, ipsum dolor sit amet consectetur adip",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
-      thumbnail: "src/assets/images/profilePhoto.jpg",
-      workspaceName: "Workspace Name",
-    },
-    {
-      id: 5,
-      title: "Video 5",
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",

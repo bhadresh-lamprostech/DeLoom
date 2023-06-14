@@ -27,10 +27,10 @@ const Navbar = () => {
             type="text"
             placeholder="Search for workspaces"
             className="flex w-full font-epilogue font-normal
-         text-[14px] placeholder:text-[#4b5264] text-white bg-transparent outline-none"
+         text-[14px] placeholder:text-[#474e5e] text-black bg-transparent outline-none"
           />
           <div
-            className="w-[72px] h-full rounded-[20px] bg-[#ff83a5] flex justify-center
+            className="w-[72px] h-full rounded-[20px] bg-[#e7f88f] flex justify-center
           items-center cursor-pointer"
           >
             <img
@@ -101,7 +101,7 @@ const Navbar = () => {
                 </li>
               ))}
 
-           <NotificationPage/>
+              <NotificationPage />
             </ul>
             <div className="flex mx-4">
               <ConnectKitButton />

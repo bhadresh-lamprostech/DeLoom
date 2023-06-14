@@ -164,6 +164,7 @@ const NavigationInDash = () => {
   const [recordingName, setRecordingName] = useState("");
   const [recordingDescription, setRecordingDescription] = useState("");
   const [saveLocation, setSaveLocation] = useState("");
+  const [showSaveBtn, setShowSaveBtn] = useState(false);
   const mediaRecorderRef = useRef(null);
   const videoRef = useRef(null);
 
@@ -196,6 +197,7 @@ const NavigationInDash = () => {
     setPopupOpen(false);
     setVideoUrl(null);
     setSaveRecording(false);
+    setShowSaveBtn(false);
   };
 
   const startRecording = async () => {
@@ -226,6 +228,7 @@ const NavigationInDash = () => {
   };
 
   const stopRecording = () => {
+    setShowSaveBtn(true);
     if (mediaRecorderRef.current) {
       mediaRecorderRef.current.stop();
       setStream(null);
@@ -303,7 +306,7 @@ const NavigationInDash = () => {
               Close
             </button>
 
-            {!recording && saveRecording && (
+            {showSaveBtn && (
               <button
                 className="px-4 py-2 bg-green-500 text-white rounded ml-2"
                 onClick={() => {
