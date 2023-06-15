@@ -1,13 +1,41 @@
-.ProfilePageMainClass {
-  height: 83vh;
-  padding: 2%;
-  border-radius: 2rem;
-  margin-right: 2%;
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #cfd770; /* Light grey */
+  border-top: 10px solid #383636; /* Black */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
 }
 
-.ProfilePhotoClass {
+.spinner-container {
+  display: flex;
+  top: 0%;
+  bottom: 50;
   text-align: center;
-  padding-left: 2%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------- */
+
+.ProfilePageMainClass {
+  /* height: 83vh; */
+  height: 27.5vh;
+  padding: 2%;
+  border-radius: 2.5rem;
+  margin: 2%;
+
+  -webkit-box-shadow: -1px -1px 9px 2px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: -1px -1px 9px 2px rgba(0, 0, 0, 0.23);
+  box-shadow: -1px -1px 9px 2px rgba(0, 0, 0, 0.23);
 }
 
 .profile-photo {
@@ -18,7 +46,7 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  margin-bottom: 3%;
+  /* margin-bottom: 3%; */
 }
 
 @media (max-width: 768px) {
@@ -47,30 +75,74 @@
   font-weight: bold;
 }
 
-.UserProfileDetails {
-  margin-bottom: 1%;
-  margin-left: 1%;
-  padding: 1rem;
-}
-
-.createWSClass {
-  margin: 2.5%;
-  text-align: right;
-}
-
-.createWorkspaceBtn {
+/* .createWorkspaceBtn {
   border-radius: 2rem;
   padding: 1rem;
-  background-color: #ffffff;
+  background-color: #fdff8b;
   color: rgb(0, 0, 0);
-  /* background-color: #151212;
-  color: rgb(255, 255, 255); */
+} */
+
+/* .createWorkspaceBtn:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+} */
+
+.createWorkspaceBtn {
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: -1rem 0.1em 0.1em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.2s;
+
+  border-radius: 1.5rem;
+  border: 2px solid;
+  color: #ff206e;
+  border-color: #ff206e;
+  background-color: #ffffff;
+}
+
+.createWorkspaceBtn:hover {
+  color: #ffffff;
+  border: 2px solid #ff83a5;
+  background-color: #ff83a5;
 }
 
 .UserProfileDetails > * {
   margin-bottom: 1rem;
 }
 
+/*  */
+
+.ProfileContent {
+  display: flex;
+}
+
+.ProfilePhotoClass {
+  text-align: left;
+  padding-left: 2%;
+  /* flex: 1; */
+}
+
 .UserProfileDetails {
-  color: white !important;
+  margin-bottom: 1%;
+  margin-left: 1%;
+  padding: 1rem;
+  color: #000000;
+  flex: 1;
+}
+
+.createWSClass {
+  margin: 2.5%;
+  text-align: right;
+  flex: 1;
+}
+
+.UserProfileDetails-Name {
+  text-transform: uppercase;
+  font-weight: bold;
 }

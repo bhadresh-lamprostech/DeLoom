@@ -9,17 +9,17 @@ import {
 
 export const navlinks = [
   {
-    name: "dashboard",
+    name: "Dashboard",
     imgUrl: dashboard,
-    link: "/home",
+    link: "/dashboard",
   },
   {
-    name: "campaign",
+    name: "Notification",
     imgUrl: createCampaign,
     link: "/notification-page",
   },
   {
-    name: "workspace",
+    name: "Workspace",
     imgUrl: workspace,
     link: "/workspace-page",
   },

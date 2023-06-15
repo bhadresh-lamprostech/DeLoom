@@ -21,7 +21,12 @@ const LandingPageHero = () => {
               />
             </h1>
             <p className="mt-6 mb-8 text-lg font-semibold text-gray-800 sm:mb-12">
-              Welcome to VidWeave, the decentralized video sharing platform that puts you in control. With VidWeave, you can create and share videos securely and directly, without intermediaries or centralized control. Empower yourself with privacy, ownership, and a seamless user experience. Join VidWeave and be part of the decentralized video revolution.
+              Welcome to VidWeave, the decentralized video sharing platform that
+              puts you in control. With VidWeave, you can create and share
+              videos securely and directly, without intermediaries or
+              centralized control. Empower yourself with privacy, ownership, and
+              a seamless user experience. Join VidWeave and be part of the
+              decentralized video revolution.
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
               <button
@@ -29,7 +34,7 @@ const LandingPageHero = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-3 text-lg font-semibold text-gray-800 bg-white hover:bg-rose-200 transition-colors duration-300 rounded-md shadow"
                 onClick={() => {
-                  navigate("/home");
+                  navigate("/dashboard");
                 }}
               >
                 Get Started

@@ -10,7 +10,7 @@ function WorkspacesPage() {
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
       thumbnail: "src/assets/images/profilePhoto.jpg",
-      workspaceName: "Workspace Name",
+      workspaceName: "John's Workspace",
     },
     {
       id: 5,

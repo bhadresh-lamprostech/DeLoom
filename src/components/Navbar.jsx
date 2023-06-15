@@ -30,7 +30,7 @@ const Navbar = () => {
          text-[14px] placeholder:text-[#474e5e] text-black bg-transparent outline-none"
           />
           <div
-            className="w-[72px] h-full rounded-[20px] bg-[#e7f88f] flex justify-center
+            className="w-[72px] h-full rounded-[20px] bg-[#FF206E] flex justify-center
           items-center cursor-pointer"
           >
             <img
@@ -64,7 +64,7 @@ const Navbar = () => {
           />
           <div
             className={`absolute top-[60px] right-0 left-0
-                bg-[#1c1c24] z-10 shadow-secondary py-4 ${
+                bg-[#ebebf7] z-10 shadow-secondary py-4 ${
                   !toogleDrawer ? "-translate-y-[100vh]" : "translate-y-0"
                 } transition-all duration-700`}
           >
@@ -73,7 +73,7 @@ const Navbar = () => {
                 <li
                   key={link.name}
                   className={`flex p-4 ${
-                    isActive === link.name && "bg-[#3a3a43]"
+                    isActive === link.name && "bg-[#a3a3bc]"
                   }`}
                   onClick={() => {
                     setIsActive(link.name);
@@ -92,8 +92,8 @@ const Navbar = () => {
                     className={`ml-[20px] font-epilogue font-semibold text-[14px] 
                       ${
                         isActive === link.name
-                          ? "text-[#1dc071]"
-                          : "text-[#808191]"
+                          ? "text-[#737373]"
+                          : "text-[#000000]"
                       }`}
                   >
                     {link.name}

@@ -29,6 +29,55 @@ function WorkspaceMainPage() {
         walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E3",
         copied: false,
       },
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        profileLogo: "src/assets/images/profilePhoto.jpg",
+        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E2",
+        copied: false,
+      },
+      {
+        name: "Jane Smith",
+        email: "jane.smith@example.com",
+        profileLogo: "src/assets/images/profilePhoto.jpg",
+        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E3",
+        copied: false,
+      },
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        profileLogo: "src/assets/images/profilePhoto.jpg",
+        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E2",
+        copied: false,
+      },
+      {
+        name: "Jane Smith",
+        email: "jane.smith@example.com",
+        profileLogo: "src/assets/images/profilePhoto.jpg",
+        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E3",
+        copied: false,
+      },
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        profileLogo: "src/assets/images/profilePhoto.jpg",
+        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E2",
+        copied: false,
+      },
+      {
+        name: "Jane Smith",
+        email: "jane.smith@example.com",
+        profileLogo: "src/assets/images/profilePhoto.jpg",
+        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E3",
+        copied: false,
+      },
+      {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        profileLogo: "src/assets/images/profilePhoto.jpg",
+        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E2",
+        copied: false,
+      },
     ],
   });
 
@@ -94,7 +143,8 @@ function WorkspaceMainPage() {
 
   return (
     <>
-      <div className="WorkspacePageMainClass bg-[#1c1c24] text-white">
+      {/* <div className="WorkspacePageMainClass bg-[#ffbd429d] text-black"> */}
+      <div className="WorkspacePageMainClass text-black">
         <div>
           <div className="WorkspaceHead">
             <b>YOUR WORKSPACE PROFILE</b>
@@ -152,37 +202,40 @@ function WorkspaceMainPage() {
                 <div className="TableHeaderCell">Email</div>
                 <div className="TableHeaderCell">Wallet Address</div>
               </div>
-              {userData.users.map((user, index) => (
-                <div className="TableRow" key={index}>
-                  <div className="TableCell UsersNameAndLogo">
-                    {/* <div className="UsersLogoClass">
+
+              <div className="UserDetailsMainClassDiv">
+                {userData.users.map((user, index) => (
+                  <div className="TableRow" key={index}>
+                    <div className="TableCell UsersNameAndLogo">
+                      {/* <div className="UsersLogoClass">
                       <img
-                        src={user.profileLogo}
+                      src={user.profileLogo}
                         className="userProfileLogoMain"
-                      />
-                    </div> */}
-                    <div className="UsersNameClass">
-                      <b>{user.name}</b>
+                        />
+                      </div> */}
+                      <div className="UsersNameClass">
+                        <b>{user.name}</b>
+                      </div>
+                    </div>
+                    <div className="TableCell">{user.email}</div>
+                    <div className="TableCell">
+                      <span className="mr-3">
+                        {renderWalletAddress(user.walletAddress)}
+                      </span>
+                      {user.copied || copiedUserIndex === index ? (
+                        <MdOutlineCheckCircle className="CopyIcon2 Copied2" />
+                      ) : (
+                        <TbCopy
+                          className="CopyIcon2"
+                          onClick={() => {
+                            copyToClipboard(user.walletAddress, index);
+                          }}
+                        />
+                      )}
                     </div>
                   </div>
-                  <div className="TableCell">{user.email}</div>
-                  <div className="TableCell">
-                    <span className="mr-3">
-                      {renderWalletAddress(user.walletAddress)}
-                    </span>
-                    {user.copied || copiedUserIndex === index ? (
-                      <MdOutlineCheckCircle className="CopyIcon2 Copied2" />
-                    ) : (
-                      <TbCopy
-                        className="CopyIcon2"
-                        onClick={() => {
-                          copyToClipboard(user.walletAddress, index);
-                        }}
-                      />
-                    )}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

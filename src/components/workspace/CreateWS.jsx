@@ -77,8 +77,8 @@ function CreateWS() {
 
   return (
     <>
-      <div className="text-white p-5">
-        {/* <div className="createWorkspace-mainClass bg-white text-black"> */}
+      <div className="createWorkspaceMainDivClass bg-[#ffffff]">
+        {/* <div className="createWorkspaceMainDivClass bg-white text-black"> */}
         <div>
           <h2 className="text-2xl font-bold mb-6">CREATE YOUR WORKSPACE</h2>
           <p className="text-gray-300 mb-6">
