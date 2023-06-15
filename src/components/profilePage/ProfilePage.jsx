@@ -24,6 +24,7 @@ function ProfilePage() {
           `https://vidapi-ten.vercel.app/readdata?address=${walletAddress}`
         );
         setUserProfile(response.data[0]); // Access the first object in the array
+        console.log(response.data[0])
       } catch (error) {
         console.log(error);
       }

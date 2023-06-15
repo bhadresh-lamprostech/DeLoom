@@ -30,7 +30,7 @@ function CreateWS() {
     const fetchCreatorData = async () => {
       try {
         const response = await axios.get(
-          ` http://localhost:3001/readdata?address=${walletAddress}`
+          ` https://vidapi-ten.vercel.app/readdata?address=${walletAddress}`
         );
 
         const data = response.data[0];
@@ -47,6 +47,13 @@ function CreateWS() {
 
     fetchCreatorData();
   }, []);
+
+  useEffect(() => {
+    if (logoPreview) {
+      logoUpload();
+    }
+  }, [logoPreview]);
+  
 
   const handleLogoChange = (e) => {
     const file = e.target.files[0];
@@ -92,6 +99,7 @@ function CreateWS() {
     const files = await res.files(logoPreview);
     for (const file of files) {
       setImageCid(`${file.cid}`);
+      console.log(file.cid);
     }
   };
 
@@ -114,16 +122,14 @@ function CreateWS() {
   };
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    await logoUpload();
-    console.log("logo uploaded..");
+    e.preventDefault();
 
     const formDataToSend = {
       id: creatorData.id,
       name: formData.workspace,
-      workspaceLogo: imageCid,
-      creatorName: creatorData.creatorName,
-      creatorAddress: creatorData.creatorAddress,
+      workspacelogo: imageCid,
+      creatorname: creatorData.creatorName,
+      creatoraddress: creatorData.creatorAddress,
     };
 
     formData.additionalInputs.forEach((member, index) => {

@@ -1,65 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import VideoCard from "./VideoCard";
 import "../../styles/dashboard/MyVideosPage.css";
+import axios from "axios";
+import { useAccount } from "wagmi";
 
 function MyVideosPage() {
-  const videos = [
-    {
-      id: 1,
-      title: "Video 1",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
-      thumbnail: "src/assets/images/profilePhoto.jpg",
-      workspaceName: "Workspace Name",
-    },
-    {
-      id: 2,
-      title: "Video 2",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
-      thumbnail: "src/assets/images/profilePhoto.jpg",
-      workspaceName: "Workspace Name",
-    },
-    {
-      id: 3,
-      title: "Video 3",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
-      thumbnail: "src/assets/images/profilePhoto.jpg",
-      workspaceName: "Workspace Name",
-    },
-    {
-      id: 4,
-      title: "Lorem, ipsum dolor sit amet consectetur adip",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
-      thumbnail: "src/assets/images/profilePhoto.jpg",
-      workspaceName: "Workspace Name",
-    },
-    {
-      id: 5,
-      title: "Video 5",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
-      thumbnail: "src/assets/images/profilePhoto.jpg",
-      workspaceName: "Workspace Name",
-    },
-    {
-      id: 6,
-      title: "Video 6",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non, ea consequuntur possimus dolores qui, temporibus aliquam saepe quibusdam quisquam assumenda error officia, obcaecati odit iusto eum maiores accusantium culpa!",
-      thumbnail: "src/assets/images/profilePhoto.jpg",
-      workspaceName: "Workspace Name",
-    },
-    // Add more video objects as needed
-  ];
+  const { address } = useAccount();
+  const walletAddress = address;
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const config = {
+          method: "get",
+          maxBodyLength: Infinity,
+          url: `http://localhost:3001/readpersonaldata?creator_address=${walletAddress}`,
+          headers: {},
+        };
+        const response = await axios.request(config);
+        console.log(response.data)
+        setVideos(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, [walletAddress]);
 
   return (
     <>
       <div className="video-page">
         <div className="video-page-container">
-          <VideoCard videos={videos} />
+        <VideoCard videos={videos} />
         </div>
       </div>
     </>
