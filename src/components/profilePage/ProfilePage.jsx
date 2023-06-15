@@ -35,43 +35,48 @@ function ProfilePage() {
 
   return (
     <>
-      <div className="ProfilePageMainClass bg-[#1c1c24] text-white">
-        {/* <div className="ProfilePageMainClass bg-white text-black"> */}
+      <div className="ProfileHead">PERSONAL PROFILE</div>
+      <div className="ProfilePageMainClass bg-[#ffffff] ">
         {userProfile ? (
-          <div>
-            {/* <h2>Personal Profile</h2> */}
-            <div className="ProfileHead">PERSONAL PROFILE</div>
+          <div className="ProfileContent">
             <div className="ProfilePhotoClass">
               <img
                 src={"https://" + `${userProfile.logocid}` + ".ipfs.w3s.link"}
-                // src='https://"${userProfile.logocid}"'
                 alt="Profile"
                 className="profile-photo"
               />
             </div>
-            <div className="UserProfileDetails text-white">
-              <h2>
-                <b>Name: </b> {userProfile.firstname} {userProfile.lastname}
+            <div className="UserProfileDetails">
+              <h2 className="UserProfileDetails-Name">
+                {/* <b>Name: </b>  */}
+                {userProfile.firstname} {userProfile.lastname}
               </h2>
-              <h2>
-                <b>Username: </b> {userProfile.username}
-              </h2>
+              {/* <h2>
+                  <b>Username: </b> 
+                  {userProfile.username}
+                </h2> */}
               <p>
-                <b>Contact Info: </b> {userProfile.email}
+                {/* <b>Contact Info: </b>  */}
+                {userProfile.email}
+              </p>
+              <p>
+                {/* <b>Wallet Address: </b>  */}
+                {address}
               </p>
             </div>
-            <hr />
             <div className="createWSClass">
               <button
                 className="createWorkspaceBtn"
                 onClick={handleCreateWorkspace}
               >
-                Create Workspace
+                Create Workspace +
               </button>
             </div>
           </div>
         ) : (
-          <div>Loading...</div>
+          <div className="spinner-container">
+            <div className="loading-spinner"></div>
+          </div>
         )}
       </div>
     </>

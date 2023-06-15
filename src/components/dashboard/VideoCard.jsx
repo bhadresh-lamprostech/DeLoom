@@ -90,8 +90,8 @@ const VideoCard = ({ videos }) => {
                   
                 </div>
                 {/* <div className="titleDescNameBtnMain"> */}
-                <div className="details ">
-                  <h4 className="">
+                <div className="details titleDescNameBtnMain">
+                  <h4 className="video-wsName-mainClass">
                     <b>{video.workspaceName}</b>
                   </h4>
                   <h4 className="video-title-mainClass">{video.video_name}</h4>
