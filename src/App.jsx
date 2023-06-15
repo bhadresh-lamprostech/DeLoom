@@ -64,7 +64,7 @@ const App = () => {
             {/* Other routes */}
             <Route path="/" element={<Navigate to="/landing" />} />
             <Route path="/landing" element={<LandingPage />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/dashboard" element={<Home />} />
             <Route path="/library" element={<MainDashboard />} />
             {/* <Route path="/profile" element={<Profile />} /> */}
             <Route path="/workspace" element={<WorkspacesPage />} />

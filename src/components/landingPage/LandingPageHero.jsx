@@ -50,7 +50,7 @@ const LandingPageHero = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-3 text-lg font-semibold text-gray-800 bg-[#FFBC41] hover:bg-rose-500 transition-colors duration-300 rounded-md shadow"
                 onClick={() => {
-                  navigate("/home");
+                  navigate("/dashboard");
                 }}
               >
                 Get Started

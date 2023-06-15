@@ -7,7 +7,10 @@ import "../styles/sidebar/Sidebar.css";
 const Icon = ({ styles, name, imgUrl, isActive, disabled, handelclick }) => (
   <div
     className={`w-[48px] h-[48px] rounded-[10px] ${
-      isActive && isActive === name && "bg-[#f0f8cae3]"
+      // isActive && isActive === name && "bg-[#FF83A5]"
+      isActive && isActive === name && "bg-[#FF206E]"
+      // isActive && isActive === name && "bg-[#FFBC42]"
+      // isActive && isActive === name && "bg-[#9eefdfee]"
     } flex justify-center
 items-center ${!disabled && "cursor-pointer"} ${styles}`}
     onClick={handelclick}
@@ -26,7 +29,7 @@ items-center ${!disabled && "cursor-pointer"} ${styles}`}
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState("dashboard");
+  const [isActive, setIsActive] = useState("Dashboard");
 
   return (
     <div className="p-3">
@@ -59,7 +62,8 @@ const Sidebar = () => {
             ))}
           </div>
           <Icon
-            styles="bg-[#f0f8ca]  shadow-secondary"
+            className=""
+            styles="bg-[#FF206E] shadow-secondary"
             handelclick={() => {
               navigate("/profile-page");
             }}

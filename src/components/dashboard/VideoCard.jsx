@@ -7,6 +7,8 @@ const VideoCard = ({ videos }) => {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState({});
 
+  console.log(videos)
+
   const handleMenuClick = (videoId) => {
     setShowMenu((prevState) => ({
       ...prevState,
@@ -83,15 +85,17 @@ const VideoCard = ({ videos }) => {
                   </>
                 )}
                 <div className="thumbnail">
-                  <img src={video.thumbnail} alt={video.title} />
+                <video src={`https://gateway.lighthouse.storage/ipfs/${video.content_cid}`} alt={video.video_name} />
+
+                  
                 </div>
                 {/* <div className="titleDescNameBtnMain"> */}
-                <div className="details ">
-                  <h4 className="">
+                <div className="details titleDescNameBtnMain">
+                  <h4 className="video-wsName-mainClass">
                     <b>{video.workspaceName}</b>
                   </h4>
-                  <h4 className="video-title-mainClass">{video.title}</h4>
-                  <p className="video-desc-mainClass ">{video.description}</p>
+                  <h4 className="video-title-mainClass">{video.video_name}</h4>
+                  <p className="video-desc-mainClass ">{video.video_desc}</p>
                 </div>
                 <div className="actions ">
                   <button

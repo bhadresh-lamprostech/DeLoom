@@ -7,7 +7,9 @@ function VideoDetailsPage() {
   const videoId = location.state.data;
 
   return (
-    <div className="videoDetailsMainClass bg-[#1c1c24] text-white">
+    // <div className="videoDetailsMainClass bg-[#ff83a5]">
+    // <div className="videoDetailsMainClass bg-[#ff206e]">
+    <div className="videoDetailsMainClass bg-[#ffffff]">
       <div className="video-container">
         <div className="iframeforborder">
           <iframe

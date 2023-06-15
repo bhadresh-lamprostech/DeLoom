@@ -1,16 +1,18 @@
 .new-video-btn {
   margin-left: auto;
   cursor: pointer;
-  color: #ffffff;
-  /* background-color: #828282; */
-  background-color: #ff83a5;
   padding: 10px 24px;
   border-radius: 1.5rem;
+  border: 2px solid;
+  color: #ff206e;
+  border-color: #ff206e;
+  background-color: #ffffff;
 }
 .new-video-btn:hover {
+  /* color: #111111; */
   color: #ffffff;
-  /* background-color: #b1afaf; */
-  background-color: #ff83a4bc;
+  border: 2px solid #ff83a5;
+  background-color: #ff83a5;
   transition: 0.3s;
 }
 
