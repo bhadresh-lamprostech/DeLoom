@@ -1,26 +1,43 @@
-.weavebg{
-    background: linear-gradient(270deg, #ffbc42, #ff206e, #ff83a5);
-    background-size: 600% 600%;
+.bgimage {
+    background-image: url("src/assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bglogo{
+    height: 550px;
+    width: 750px;
+  }
 
-    -webkit-animation: AnimationName 24s ease infinite;
-    -moz-animation: AnimationName 24s ease infinite;
-    animation: AnimationName 24s ease infinite;
-}
+  .lightbg{
+    background-image: url("../../assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 41%}
-    50%{background-position:100% 60%}
-    100%{background-position:0% 41%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 41%}
-    50%{background-position:100% 60%}
-    100%{background-position:0% 41%}
-}
-@keyframes AnimationName { 
-    0%{background-position:0% 41%}
-    50%{background-position:100% 60%}
-    100%{background-position:0% 41%}
-}
-
+  }
   
+ 
+.navbar {
+    height: 60px; /* Adjust the height value as per your preference */
+    background-color: #0d0c0c;
+    /* background-image: url("../../assets/background.svg"); */
+     /* Set the background color of the navbar */
+    /* Add any other styles you want for the navbar */
+  }
+  
+  .navbar-logo { padding-left: 2%;
+    width: 350px; /* Adjust the width of the logo image */
+    height: 70px; /* Adjust the height of the logo image */
+    /* Add any other styles you want for the logo image */
+  }
+  .footerimg{
+    width:400px;
+   
+    
+  }
+
+ .footerbg{
+    
+    background-image: url("src/assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

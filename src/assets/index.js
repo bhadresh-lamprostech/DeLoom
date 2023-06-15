@@ -13,7 +13,7 @@ import money from './money.svg';
 import loader from './loader.svg';
 import thirdweb from './thirdweb.png';
 import vidWeaveLogo from './VidWeave_logo-02 - Copy.png'
-import vidWeaveLogoMain from './VidWeave_logo-02.png'
+// import vidWeaveLogoMain from './VidWeave_logo-02.png'
 
 export {
   tagType,

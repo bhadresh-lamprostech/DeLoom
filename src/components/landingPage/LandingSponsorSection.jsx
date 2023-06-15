@@ -32,7 +32,7 @@ const LandingSponsorSection = () => {
 
   return (
     <div className="sponsor-section">
-      <h1>Sponsors</h1>
+      <h1 className="poweredbyHeading"> Powered By </h1>
       <div className="sponsor-cards">
         {sponsors.map((sponsor) => (
           <motion.div
@@ -46,8 +46,10 @@ const LandingSponsorSection = () => {
             <div className="icon-container">
               <img src={sponsor.icon} alt={sponsor.name} />
             </div>
-            <h2 className='cardtile'>{sponsor.name}</h2>
-            <p>{sponsor.description }</p>
+            
+            <h2 className='sponsorname'>{sponsor.name}</h2>
+            
+            <p className='LandingSponsorDesc'>{sponsor.description }</p>
           </motion.div>
         ))}
       </div>
