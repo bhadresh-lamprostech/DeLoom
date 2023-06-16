@@ -15,7 +15,7 @@ function MyVideosPage() {
         const config = {
           method: "get",
           maxBodyLength: Infinity,
-          url: `https://vidapi-rose.vercel.app/readpersonaldata?creator_address=${walletAddress}`,
+          url: `https://videapi.vercel.app/readpersonaldata?creator_address=${walletAddress}`,
           headers: {},
         };
         const response = await axios.request(config);

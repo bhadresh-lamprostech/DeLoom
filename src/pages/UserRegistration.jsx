@@ -92,7 +92,7 @@ function UserRegistration() {
     console.log(data);
 
     axios
-      .post("https://vidapi-rose.vercel.app/insertuserdata", data)
+      .post("https://videapi.vercel.app/insertuserdata", data)
       .then((response) => {
         console.log(response.data);
         navigate("/profile-page");
