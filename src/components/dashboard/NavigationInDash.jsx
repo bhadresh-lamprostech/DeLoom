@@ -6,6 +6,7 @@ import "../../styles/dashboard/NavigationInDash.css";
 import { useAccount } from "wagmi";
 // import { Web3Storage } from "web3.storage";
 import lighthouse from "@lighthouse-web3/sdk";
+import { FaSpinner } from "react-icons/fa";
 
 // const client = new Web3Storage({
 //   token:
@@ -25,6 +26,7 @@ const NavigationInDash = () => {
   const [saveLocation, setSaveLocation] = useState("");
   const [workspaceName, setWorkspaceName] = useState("");
   const [contentCid, setContentCid] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [showSaveBtn, setShowSaveBtn] = useState(false);
   const mediaRecorderRef = useRef(null);
@@ -87,6 +89,7 @@ const NavigationInDash = () => {
 
   const contentUpload = async () => {
     try {
+      setIsLoading(true);
       const url = videoUrl;
 
       const response = await fetch(url);
@@ -98,6 +101,7 @@ const NavigationInDash = () => {
         progressCallback
       );
       setContentCid(output.data.Hash);
+      setIsLoading(false);
       // handleFormSubmit();
     } catch (error) {
       console.error("Error occurred during content upload:", error);
@@ -370,7 +374,11 @@ const NavigationInDash = () => {
                     <button type="submit">Submit</button>
                   ) : (
                     <button type="submit" onClick={contentUpload}>
-                      Upload
+                      {isLoading ? (
+                        <FaSpinner className="animate-spin mr-1" /> // Show spinner icon if loading
+                      ) : (
+                        "Upload"
+                      )}
                     </button>
                   )}
                 </form>
