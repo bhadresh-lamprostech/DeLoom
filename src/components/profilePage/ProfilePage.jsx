@@ -4,7 +4,6 @@ import "../../styles/profilePage/ProfilePage.css";
 import { useAccount } from "wagmi";
 import { useNavigate } from "react-router-dom";
 
-
 function ProfilePage() {
   const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState(null);
@@ -22,7 +21,7 @@ function ProfilePage() {
     const fetchUserProfile = async () => {
       try {
         const response = await axios.get(
-          `https://videapi.vercel.app/readdata?address=${walletAddress}`
+          `https://vidapi-rose.vercel.app/readdata?address=${walletAddress}`
         );
         setUserProfile(response.data[0]); // Access the first object in the array
         console.log(response.data[0]);

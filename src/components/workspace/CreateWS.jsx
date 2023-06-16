@@ -30,7 +30,7 @@ function CreateWS() {
     const fetchCreatorData = async () => {
       try {
         const response = await axios.get(
-          ` https://videapi.vercel.app/readdata?address=${walletAddress}`
+          ` https://vidapi-rose.vercel.app/readdata?address=${walletAddress}`
         );
 
         const data = response.data[0];
@@ -145,7 +145,7 @@ function CreateWS() {
 
     try {
       const response = await axios.post(
-        "https://videapi.vercel.app/insertworkspacedata",
+        "https://vidapi-rose.vercel.app/insertworkspacedata",
         formDataToSend
       );
       console.log(response.data);
