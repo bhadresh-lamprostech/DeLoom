@@ -49,8 +49,9 @@
   }
   
   .navbar-logo { padding-left: 2%;
-    width: 400px; /* Adjust the width of the logo image */
-    height: 75px; /* Adjust the height of the logo image */
+    padding-top: 1%;
+    width: 275px; /* Adjust the width of the logo image */
+    height: 85px; /* Adjust the height of the logo image */
     /* Add any other styles you want for the logo image */
   }
   .footerimg{
