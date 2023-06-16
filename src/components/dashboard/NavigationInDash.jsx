@@ -6,7 +6,9 @@ import "../../styles/dashboard/NavigationInDash.css";
 import { useAccount } from "wagmi";
 // import { Web3Storage } from "web3.storage";
 import lighthouse from "@lighthouse-web3/sdk";
-import { FaSpinner } from "react-icons/fa";
+// import uploadIcon from "../../assets/upload.png";
+import uploadIcon from "/src/assets/upload.png";
+import closeIcon from "/src/assets/cancel.png";
 
 // const client = new Web3Storage({
 //   token:
@@ -245,14 +247,14 @@ const NavigationInDash = () => {
 
   return (
     <>
-      <div className="dash-navbar-container">
-        <ul className="dash-navbar">
+      {/* <div className="dash-navbar-container">
+        <div className="dash-navbar navInDashListItemsClass ">
           <div className="dash-navbar-names text-white">
             {navItems.map((item, index) => (
               <li
                 key={index}
                 onClick={() => handleItemClick(index, item.page)}
-                className={activeItem === index ? "active" : ""}
+                className={`${activeItem === index ? "active" : ""}`}
               >
                 {item.label}
                 <span className="underline"></span>
@@ -262,128 +264,193 @@ const NavigationInDash = () => {
           <button className="new-video-btn" onClick={handleNewVideoClick}>
             + New Video
           </button>
-        </ul>
+        </div>
+        <div className="">{renderPage()}</div>
+      </div> */}
+
+      <div className="dash-navbar-container">
+        <div className="dash-navbar navInDashListItemsClass">
+          <div className="dash-navbar-names text-white">
+            {navItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => handleItemClick(index, item.page)}
+                className={`nav-button ${activeItem === index ? "active" : ""}`}
+              >
+                {item.label}
+                <span className="underline"></span>
+              </button>
+            ))}
+          </div>
+          <button className="new-video-btn" onClick={handleNewVideoClick}>
+            + New Video
+          </button>
+        </div>
+        {/* <hr /> */}
         <div className="">{renderPage()}</div>
       </div>
+
       {popupOpen && (
-        <div className="fixed z-30 top-0 left-0 flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-75">
-          <div className="max-w-md mx-auto bg-white rounded-lg p-6">
-            <h3 className="text-lg text-black font-bold mb-4">
-              Screen Recording
-            </h3>
+        <div className="RecordingSaveFormDetailsClass  z-30 top-0 left-0 flex items-center justify-center bg-gray-900 bg-opacity-75">
+          <div className="RecordingSaveFormDetailsClass-sub flex mx-auto p-6">
+            <div className="saveRecordingPreview">
+              <h3 className="text-lg  font-bold mb-4">Screen Recording</h3>
 
-            {videoUrl ? (
-              <video
-                className="my-3"
-                ref={videoRef}
-                src={videoUrl}
-                controls
-                autoPlay
-              />
-            ) : (
-              stream && <video ref={videoRef} srcObject={stream} autoPlay />
-            )}
+              {videoUrl ? (
+                <video
+                  className="my-3 h-[200px]"
+                  ref={videoRef}
+                  src={videoUrl}
+                  controls
+                  autoPlay
+                />
+              ) : (
+                stream && <video ref={videoRef} srcObject={stream} autoPlay />
+              )}
 
-            {!recording ? (
-              <button
-                className="px-4 py-2 bg-blue-500 text-white rounded mr-2"
-                onClick={startRecording}
+              {!recording ? (
+                <button
+                  className="startBtnClass px-4 py-2  text-white  mr-3"
+                  onClick={startRecording}
+                >
+                  Start Recording
+                </button>
+              ) : (
+                <button
+                  className="stopBtnClass px-4 py-2 text-white  mr-3"
+                  onClick={stopRecording}
+                >
+                  Stop Recording
+                </button>
+              )}
+
+              {/* <button
+                className="closePopupBtn px-4 py-2 text-white mr-3"
+                onClick={handleClosePopup}
               >
-                Start Recording
-              </button>
-            ) : (
-              <button
-                className="px-4 py-2 bg-red-500 text-white rounded mr-2"
-                onClick={stopRecording}
-              >
-                Stop Recording
-              </button>
-            )}
+                Close
+              </button> */}
 
+              {showSaveBtn && (
+                <button
+                  className="saveRecBtnClass px-4 py-2 text-white ml-2"
+                  onClick={() => {
+                    setSaveRecording(true);
+                  }}
+                >
+                  Save
+                </button>
+              )}
+            </div>
+            <div className="saveRecordingForm">
+              {saveRecording && (
+                <div className="save-form">
+                  <h3>Save Recording</h3>
+                  <form onSubmit={handleFormSubmit}>
+                    {/* <label htmlFor="recording-name">Name:</label> */}
+                    <input
+                      placeholder="Enter Name"
+                      className="SaveRecordingInputFields"
+                      id="recording-name"
+                      type="text"
+                      value={recordingName}
+                      onChange={(e) => setRecordingName(e.target.value)}
+                    />
+
+                    {/* <label htmlFor="recording-description">Description:</label> */}
+                    <input
+                      placeholder="Enter Description..."
+                      className="SaveRecordingInputFields"
+                      id="recording-description"
+                      type="textarea"
+                      value={recordingDescription}
+                      onChange={(e) => setRecordingDescription(e.target.value)}
+                    />
+
+                    {/* <label htmlFor="save-location">Save Location:</label> */}
+                    <select
+                      className="SaveRecordingInputFields"
+                      id="save-location"
+                      value={saveLocation}
+                      onChange={(e) => setSaveLocation(e.target.value)}
+                    >
+                      <option value="">Select location</option>
+                      <option value="personal">Save in Personal</option>
+                      <option value="workspace">Save in Workspace</option>
+                    </select>
+
+                    {saveLocation === "workspace" && (
+                      <div>
+                        {/* <label htmlFor="workspace-name">Workspace Name:</label> */}
+                        <input
+                          placeholder="Enter Workspace Name"
+                          className="SaveRecordingInputFields"
+                          id="workspace-name"
+                          type="text"
+                          value={workspaceName}
+                          onChange={(e) => setWorkspaceName(e.target.value)}
+                        />
+                      </div>
+                    )}
+
+                    {/* <button type="submit"onClick={()=>contentUpload()}> Submit</button> */}
+
+                    <div className="flex  justify-end">
+                      {contentCid ? (
+                        <button type="submit">Submit</button>
+                      ) : (
+                        <button
+                          type="submit"
+                          className="flex"
+                          onClick={contentUpload}
+                        >
+                          <img
+                            src={uploadIcon}
+                            className="h-[20px] w-[20px] mr-1"
+                            alt=""
+                          />
+                          <span>Upload</span>
+                        </button>
+                      )}
+                    </div>
+                  </form>
+                </div>
+              )}
+            </div>
             <button
-              className="px-4 py-2 bg-gray-500 text-white rounded"
+              className=" absolute top-4 right-4 px-2 py-1 text-white"
               onClick={handleClosePopup}
             >
-              Close
-            </button>
-
-            {showSaveBtn && (
-              <button
-                className="px-4 py-2 bg-green-500 text-white rounded ml-2"
-                onClick={() => {
-                  setSaveRecording(true);
-                }}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-x"
               >
-                Save
-              </button>
-            )}
+                <path d="M18 6L6 18M6 6l12 12"></path>
+              </svg>
 
-            {saveRecording && (
-              <div className="save-form">
-                <h3>Save Recording</h3>
-                <form onSubmit={handleFormSubmit}>
-                  <label htmlFor="recording-name">Name:</label>
-                  <input
-                    placeholder="Enter Name"
-                    className="SaveRecordingInputFields"
-                    id="recording-name"
-                    type="text"
-                    value={recordingName}
-                    onChange={(e) => setRecordingName(e.target.value)}
-                  />
-
-                  <label htmlFor="recording-description">Description:</label>
-                  <input
-                    placeholder="Enter Description..."
-                    className="SaveRecordingInputFields"
-                    id="recording-description"
-                    type="textarea"
-                    value={recordingDescription}
-                    onChange={(e) => setRecordingDescription(e.target.value)}
-                  />
-
-                  <label htmlFor="save-location">Save Location:</label>
-                  <select
-                    className="SaveRecordingInputFields"
-                    id="save-location"
-                    value={saveLocation}
-                    onChange={(e) => setSaveLocation(e.target.value)}
-                  >
-                    <option value="">Select location</option>
-                    <option value="personal">Save in Personal</option>
-                    <option value="workspace">Save in Workspace</option>
-                  </select>
-
-                  {saveLocation === "workspace" && (
-                    <div>
-                      <label htmlFor="workspace-name">Workspace Name:</label>
-                      <input
-                        placeholder="Enter Workspace Name"
-                        className="SaveRecordingInputFields"
-                        id="workspace-name"
-                        type="text"
-                        value={workspaceName}
-                        onChange={(e) => setWorkspaceName(e.target.value)}
-                      />
-                    </div>
-                  )}
-
-                  {/* <button type="submit"onClick={()=>contentUpload()}> Submit</button> */}
-
-                  {contentCid ? (
-                    <button type="submit">Submit</button>
-                  ) : (
-                    <button type="submit" onClick={contentUpload}>
-                      {isLoading ? (
-                        <FaSpinner className="animate-spin mr-1" /> // Show spinner icon if loading
-                      ) : (
-                        "Upload"
-                      )}
-                    </button>
-                  )}
-                </form>
-              </div>
-            )}
+              {/* <img
+                src={closeIcon}
+                className="w-[35px] h-[35px] text-white"
+                alt=""
+              /> */}
+              {/* <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.354 11.354l-2.12 2.12L8 10.121l-1.233 1.233-2.121-2.12L5.88 8 4.647 6.766l2.12-2.121L8 5.88l1.233-1.233 2.121 2.12L10.12 8l1.234 1.234z" />
+              </svg> */}
+            </button>
           </div>
         </div>
       )}

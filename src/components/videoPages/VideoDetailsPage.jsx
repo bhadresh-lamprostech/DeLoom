@@ -5,12 +5,10 @@ import "../../styles/videoPages/VideoDetailsPage.css";
 function VideoDetailsPage() {
   const location = useLocation();
   const videoId = location.state.data;
-  console.log(videoId)
+  console.log(videoId);
 
   return (
-    // <div className="videoDetailsMainClass bg-[#ff83a5]">
-    // <div className="videoDetailsMainClass bg-[#ff206e]">
-    <div className="videoDetailsMainClass bg-[#ffffff]">
+    <div className="videoDetailsMainClass">
       <div className="video-container">
         <div className="iframeforborder">
           <iframe

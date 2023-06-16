@@ -5,6 +5,7 @@ import { useAccount } from "wagmi";
 import { ConnectKitButton } from "connectkit";
 import { useNavigate } from "react-router-dom";
 import UserDashboard from "../components/dashboard/UserDashboard";
+import "../styles/home/Home.css";
 
 function Home() {
   const { isConnecting, isDisconnected, address } = useAccount();
@@ -49,7 +50,16 @@ function Home() {
 
   return (
     <>
-      {isDisconnected && <ConnectKitButton />}
+      {isDisconnected && (
+        <div className="flex text-center align-center justify-center">
+          <div className="connectWalletInstructionClass ">
+            <div className="connectWalletIns_2 flex items-center justify-center p-5">
+              <p className="text-white mr-5">Please connect your wallet</p>
+              <ConnectKitButton />
+            </div>
+          </div>
+        </div>
+      )}
       {!isDisconnected && (
         <>
           {isLoading ? (
