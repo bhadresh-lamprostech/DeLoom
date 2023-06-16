@@ -8,7 +8,7 @@ const LandingSponsorSection = () => {
       id: 1,
       name: 'Push Protocol', 
       description: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo 1',
-      icon: "src/assets/pushprotocol.jpeg",
+      icon: "src/assets/pushprotocol1.png",
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ const LandingSponsorSection = () => {
 
   return (
     <div className="sponsor-section">
-      <h1>Sponsors</h1>
+      <h1 className="poweredbyHeading"> Powered By </h1>
       <div className="sponsor-cards">
         {sponsors.map((sponsor) => (
           <motion.div
@@ -46,8 +46,10 @@ const LandingSponsorSection = () => {
             <div className="icon-container">
               <img src={sponsor.icon} alt={sponsor.name} />
             </div>
-            <h2 className='cardtile'>{sponsor.name}</h2>
-            <p>{sponsor.description }</p>
+            
+            <h2 className='sponsorname'>{sponsor.name}</h2>
+            
+            <p className='LandingSponsorDesc'>{sponsor.description }</p>
           </motion.div>
         ))}
       </div>

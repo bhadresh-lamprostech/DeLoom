@@ -3,8 +3,8 @@ import './LandingPage.css';
 
 function LandingDescription() {
   return (
-    <div>
-      <div className="relative flex flex-col-reverse px-4 py-16 mx-auto lg:block lg:flex-col lg:py-32 xl:py-48 md:px-8 sm:max-w-xl md:max-w-full bg-pink-100">
+    <div className='lightbg'>
+      <div className="relative flex flex-col-reverse px-4 py-16 mx-auto lg:block lg:flex-col lg:py-32 xl:py-48 md:px-8 sm:max-w-xl md:max-w-full">
         <div className="z-0 flex justify-center h-full -mx-4 overflow-hidden lg:pt-24 lg:pb-16 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
           <img
             src="src/assets/desc.png"
@@ -16,11 +16,11 @@ function LandingDescription() {
           <div className="mb-16 lg:pr-5 lg:max-w-lg lg:mb-0">
             <div className="max-w-xl mb-6">
               <div>
-                <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+                <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-pink-100 uppercase rounded-full bg-teal-accent-400">
                   VidWeave related some content
                 </p>
               </div>
-              <h2 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none">
+              <h2 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight text-rose-300 sm:text-5xl sm:leading-none">
                  The empowering decentralised platform for creating and 
                 <br className="hidden md:block" />
                 sharing {' '}<br></br>
@@ -28,7 +28,7 @@ function LandingDescription() {
                 video
                 </span>
               </h2>
-              <p className="text-base text-gray-900 md:text-lg">
+              <p className="text-base text-pink-50 md:text-lg">
               "Discover VidWeave, the empowering decentralized video sharing platform designed to give you full control. With VidWeave, you have the freedom to create and share videos securely and directly, without any intermediaries or centralized control. Experience the power of privacy, ownership, and a seamless user interface that puts you in the driver's seat. Join the VidWeave community today and become part of the revolutionary movement towards decentralized video sharing."
               </p>
             </div>
