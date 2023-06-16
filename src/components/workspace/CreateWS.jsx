@@ -30,7 +30,7 @@ function CreateWS() {
     const fetchCreatorData = async () => {
       try {
         const response = await axios.get(
-          ` https://vidapi-ten.vercel.app/readdata?address=${walletAddress}`
+          ` https://videapi.vercel.app/readdata?address=${walletAddress}`
         );
 
         const data = response.data[0];
@@ -53,7 +53,6 @@ function CreateWS() {
       logoUpload();
     }
   }, [logoPreview]);
-  
 
   const handleLogoChange = (e) => {
     const file = e.target.files[0];
@@ -146,7 +145,7 @@ function CreateWS() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/insertworkspacedata",
+        "https://videapi.vercel.app/insertworkspacedata",
         formDataToSend
       );
       console.log(response.data);
@@ -157,10 +156,12 @@ function CreateWS() {
 
   return (
     <>
-      <div className="createWorkspaceMainDivClass bg-[#ffffff]">
+      <div className="createWorkspaceMainDivClass ">
         {/* <div className="createWorkspaceMainDivClass bg-white text-black"> */}
         <div>
-          <h2 className="text-2xl font-bold mb-6">CREATE YOUR WORKSPACE</h2>
+          <h2 className="text-2xl font-bold mb-6 text-white">
+            CREATE YOUR WORKSPACE
+          </h2>
           <p className="text-gray-300 mb-6">
             Please provide the following information to create your own
             workspace.

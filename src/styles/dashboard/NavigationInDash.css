@@ -1,12 +1,25 @@
 .new-video-btn {
-  margin-left: auto;
+  /* margin-left: auto;
   cursor: pointer;
   padding: 10px 24px;
   border-radius: 1.5rem;
   border: 2px solid;
   color: #ff206e;
   border-color: #ff206e;
-  background-color: #ffffff;
+  background-color: #ffffff; */
+
+  /* margin-top: 1rem !important; */
+  margin-left: auto;
+  /* margin: auto; */
+  font-weight: bold;
+  width: fit-content;
+  background-color: #f7b723 !important;
+  box-shadow: 0 0 5px 1px #f7b723a9;
+  color: #000000 !important;
+  padding: 10px 25px !important;
+  border: none !important;
+  border-radius: 2rem 2rem 0 2rem !important;
+  cursor: pointer !important;
 }
 .new-video-btn:hover {
   /* color: #111111; */
@@ -40,7 +53,7 @@
   margin-right: 10px;
   cursor: pointer;
   /* color: #ffffff; */
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .dash-navbar li.active {
@@ -53,8 +66,8 @@
   left: 0;
   width: 100%;
   height: 2px;
-  /* background-color: #ffffff; */
-  background-color: #000000;
+  background-color: #ffffff;
+  /* background-color: #000000; */
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }

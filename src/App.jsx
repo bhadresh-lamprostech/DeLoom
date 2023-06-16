@@ -19,13 +19,17 @@ import CreateWorkspace from "./pages/CreateWorkspace";
 import UserWorkspace from "./pages/UserWorkspace";
 import VideoDetailsPage from "./components/videoPages/VideoDetailsPage";
 import NotificationMainPage from "./pages/NotificationMainPage";
+import UserRegistration from "./pages/UserRegistration";
+import UserDashboard from "./components/dashboard/UserDashboard";
 // import VideoDetail from "./components/videoPages/VideoDetailsPage";
+import mainBg from "./assets/mainbg.png";
 
 const App = () => {
   const location = useLocation();
 
   // Check if the current route is the landing page
   const isLandingPage = location.pathname === "/landing";
+  const isRegistrationPage = location.pathname === "/user-reg";
 
   const [videos, setVideos] = useState([]); // Assuming you have a videos array
 
@@ -49,24 +53,31 @@ const App = () => {
 
   return (
     <>
-      <div className="relative sm:-8 bg-[#fcfcfc] min-h-screen flex flex-row">
-        {/* Render the Sidebar component only if not on the landing page */}
-        {!isLandingPage && (
+      {/* <div className="MainAppClassBg relative sm:-8 min-h-screen flex flex-row"> */}
+      <div
+        className="relative sm:-8"
+        style={{
+          backgroundImage: `url(${mainBg})`,
+          backgroundSize: "cover",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        {!isLandingPage && !isRegistrationPage && (
           <div className="sm:flex hidden mr-2 relative">
             <Sidebar />
           </div>
         )}
 
         <div className="flex-1 max-sm:w-full mac-w-[1280px] mx-auto">
-          {/* Render the Navbar component only if not on the landing page */}
-          {!isLandingPage && <Navbar />}
+          {!isLandingPage && !isRegistrationPage && <Navbar />}
           <Routes>
-            {/* Other routes */}
             <Route path="/" element={<Navigate to="/landing" />} />
             <Route path="/landing" element={<LandingPage />} />
+            <Route path="/user-reg" element={<UserRegistration />} />
             <Route path="/dashboard" element={<Home />} />
-            <Route path="/library" element={<MainDashboard />} />
-            {/* <Route path="/profile" element={<Profile />} /> */}
+            <Route path="/library" element={<UserDashboard />} />
             <Route path="/workspace" element={<WorkspacesPage />} />
             <Route path="/create-workspace" element={<CreateWorkspace />} />
             <Route
@@ -82,10 +93,7 @@ const App = () => {
               element={<VideoDetailsPage videos={videos} />}
             />
 
-            {/* <Route
-              path="/video-page/:videoId"
-              component={<VideoDetailsPage />}
-            /> */}
+            {/* <Route path="/newuser" element={<MainDashboard />} /> */}
           </Routes>
         </div>
       </div>

@@ -1,9 +1,15 @@
-import createCampaign from './create-campaign.svg';
-import dashboard from './dashboard.svg';
+// import createCampaign from './create-campaign.svg';
+// import dashboard from './dashboard.svg';
+// import workspace from './payment.svg';
+// import profile from './profile.svg';
+import dashboard from './home_grey_icon.png';
+import createCampaign from './NotificationIcon.png';
+import workspace from './stack_grey_icon.png';
+import profile from './user_grey_icon.png';
+
+
 import logo from './logo.svg';
 import logout from './logout.svg';
-import workspace from './payment.svg';
-import profile from './profile.svg';
 import sun from './sun.svg';
 import withdraw from './withdraw.svg';
 import tagType from './type.svg';

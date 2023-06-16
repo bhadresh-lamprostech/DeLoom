@@ -156,7 +156,7 @@ const NavigationInDash = () => {
   //   const fetchData = async () => {
   //     try {
   //       const response = await axios.get(
-  //         "http://localhost:3001/readworkspacedata",
+  //         "https://videapi.vercel.app/readworkspacedata",
   //         {
   //           params: {
   //             creatoraddress: walletAddress, // Replace with the actual creator address
@@ -195,7 +195,7 @@ const NavigationInDash = () => {
     console.log("uploading...");
 
     if (saveLocation === "personal") {
-      console.log("inside personal")
+      console.log("inside personal");
       // Handle save in personal logic
       const requestData = {
         id: randomId,
@@ -207,7 +207,7 @@ const NavigationInDash = () => {
 
       // Make the API request for saving in personal
       axios
-        .post("http://localhost:3001/insertpersonal", requestData)
+        .post("https://videapi.vercel.app/insertpersonal", requestData)
         .then((response) => {
           console.log(response.data);
         })
@@ -227,7 +227,7 @@ const NavigationInDash = () => {
 
       // Make the API request for saving in workspace
       axios
-        .post("http://localhost:3001/insertvideodata", requestData)
+        .post("https://videapi.vercel.app/insertvideodata", requestData)
         .then((response) => {
           console.log(response.data);
         })
@@ -243,7 +243,7 @@ const NavigationInDash = () => {
     <>
       <div className="dash-navbar-container">
         <ul className="dash-navbar">
-          <div className="dash-navbar-names">
+          <div className="dash-navbar-names text-white">
             {navItems.map((item, index) => (
               <li
                 key={index}
@@ -256,7 +256,7 @@ const NavigationInDash = () => {
             ))}
           </div>
           <button className="new-video-btn" onClick={handleNewVideoClick}>
-            New Video
+            + New Video
           </button>
         </ul>
         <div className="">{renderPage()}</div>
@@ -363,7 +363,6 @@ const NavigationInDash = () => {
                       />
                     </div>
                   )}
-
 
                   {/* <button type="submit"onClick={()=>contentUpload()}> Submit</button> */}
 
