@@ -17,7 +17,7 @@ const LandingPageHero = () => {
           style={{ transform: "scale(1.2)" }}
         />
       </nav>
-      <div className="dark:bg-gray-100 dark:text-rose-300 min-h-screen bgimage">
+      <div><div className=" dark:text-rose-300 min-h-screen ">
         <div className="container flex flex-col lg:flex-row lg:justify-between">
           <div className="flex items- center justify-center p-3 ">
           <motion.img
@@ -50,7 +50,7 @@ const LandingPageHero = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-3 text-lg font-semibold text-gray-800 bg-[#FFBC41] hover:bg-rose-500 transition-colors duration-300 rounded-md shadow"
                 onClick={() => {
-                  navigate("/dashboard");
+                  navigate("/home");
                 }}
               >
                 Get Started
@@ -62,7 +62,8 @@ const LandingPageHero = () => {
         <div className="wavea"></div>
         <div className="wavea"></div>
         <div className="wavea"></div>
-      </div>
+      </div></div>
+      
     </div>
   );
 };
