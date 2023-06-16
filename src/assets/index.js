@@ -3,7 +3,8 @@
 // import workspace from './payment.svg';
 // import profile from './profile.svg';
 import dashboard from './home_grey_icon.png';
-import createCampaign from './NotificationIcon.png';
+// import createCampaign from './NotificationIcon.png';
+import createCampaign from './notification.png';
 import workspace from './stack_grey_icon.png';
 import profile from './user_grey_icon.png';
 

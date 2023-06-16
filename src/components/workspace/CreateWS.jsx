@@ -158,8 +158,8 @@ function CreateWS() {
     <>
       <div className="createWorkspaceMainDivClass ">
         {/* <div className="createWorkspaceMainDivClass bg-white text-black"> */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6 text-white">
+        <div className="">
+          <h2 className="text-2xl font-bold mb-4 text-[#ff83a5]">
             CREATE YOUR WORKSPACE
           </h2>
           <p className="text-gray-300 mb-6">
@@ -179,7 +179,8 @@ function CreateWS() {
                   Workspace Name:
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className=" appearance-none block w-full bg-[#480c1f] text-[#ffffff] rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none"
+                  // className="regFormInputsMain appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-username"
                   type="text"
                   placeholder="John's Workspace"
@@ -199,15 +200,16 @@ function CreateWS() {
                   Upload Logo:
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="appearance-none block w-full bg-[#480c1f] text-white  rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none  focus:border-gray-500"
+                  // className="appearance-none block w-full bg-gray-700 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-logo"
                   type="file"
                   accept="image/jpeg, image/png"
                   onChange={handleLogoChange}
                 />
-                <p className="text-gray-300 text-xs italic">
+                {/* <p className="text-gray-300 text-xs italic">
                   Accepted formats: JPEG, PNG
-                </p>
+                </p> */}
                 {logoPreview && (
                   <img
                     src={logoPreview}
@@ -218,7 +220,7 @@ function CreateWS() {
               </div>
             </div>
 
-            <div className="flex flex-wrap -mx-3 mb-6">
+            <div className="createWorkspaceFormMainClass flex flex-wrap -mx-3 mb-6">
               <div className="w-full px-3">
                 <label className="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2">
                   Enter Wallet Addresses of Users you want to give access to
@@ -227,7 +229,8 @@ function CreateWS() {
                 {formData.additionalInputs.map((input, index) => (
                   <div className="flex items-center" key={index}>
                     <input
-                      className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none block w-full bg-[#480c1f] text-white rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none  focus:border-gray-500"
+                      // className="appearance-none block w-full bg-gray-600 text-black border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       type="text"
                       placeholder={`Address ${index + 1}`}
                       value={input}
@@ -246,7 +249,7 @@ function CreateWS() {
                 ))}
                 {formData.additionalInputs.length < 5 && (
                   <button
-                    className="ml-2 text-green-500 focus:outline-none"
+                    className="ml-2 text-[#e56290] focus:outline-none"
                     type="button"
                     onClick={addInput}
                   >
@@ -258,7 +261,8 @@ function CreateWS() {
 
             <button
               type="submit"
-              className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              className="createWorkspaceBtnClass inline-block px-6 py-2.5  text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out"
+              // className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
               onClick={handleSubmit}
             >
               Create
