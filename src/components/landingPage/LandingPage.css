@@ -14,6 +14,30 @@
     background-size: cover;
 
   }
+  /* Add the following styles to your CSS file or style tag */
+
+.icon-link {
+    transition: color 0.3s ease; /* Add transition effect to color property */
+  }
+  
+  .icon-link:hover {
+    color: #fda4af; /* Change the color when hovering */
+  }
+  /* Add the following styles to your CSS file or style tag */
+
+.icon-link,
+/* Add the following styles to your CSS file or style tag */
+
+.icon-link,
+.link {
+  transition: color 0.3s ease; /* Add transition effect to color property */
+}
+
+.icon-link:hover,
+.link:hover {
+  color: #fda4af; /* Change the color when hovering */
+}
+
   
  
 .navbar {
@@ -30,7 +54,7 @@
     /* Add any other styles you want for the logo image */
   }
   .footerimg{
-    width:400px;
+    width:450px;
    
     
   }
@@ -40,4 +64,5 @@
     background-image: url("src/assets/background.png");
     background-repeat: no-repeat;
     background-size: cover;
+    
   }

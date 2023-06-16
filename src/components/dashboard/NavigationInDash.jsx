@@ -156,7 +156,7 @@ const NavigationInDash = () => {
   //   const fetchData = async () => {
   //     try {
   //       const response = await axios.get(
-  //         "http://localhost:3001/readworkspacedata",
+  //         "https://videapi.vercel.app/readworkspacedata",
   //         {
   //           params: {
   //             creatoraddress: walletAddress, // Replace with the actual creator address
@@ -207,7 +207,7 @@ const NavigationInDash = () => {
 
       // Make the API request for saving in personal
       axios
-        .post("http://localhost:3001/insertpersonal", requestData)
+        .post("https://videapi.vercel.app/insertpersonal", requestData)
         .then((response) => {
           console.log(response.data);
         })
@@ -227,7 +227,7 @@ const NavigationInDash = () => {
 
       // Make the API request for saving in workspace
       axios
-        .post("http://localhost:3001/insertvideodata", requestData)
+        .post("https://videapi.vercel.app/insertvideodata", requestData)
         .then((response) => {
           console.log(response.data);
         })

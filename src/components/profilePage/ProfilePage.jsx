@@ -21,7 +21,7 @@ function ProfilePage() {
     const fetchUserProfile = async () => {
       try {
         const response = await axios.get(
-          `https://vidapi-ten.vercel.app/readdata?address=${walletAddress}`
+          `https://videapi.vercel.app/readdata?address=${walletAddress}`
         );
         setUserProfile(response.data[0]); // Access the first object in the array
         console.log(response.data[0])
