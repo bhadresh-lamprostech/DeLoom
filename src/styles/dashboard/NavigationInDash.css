@@ -1,14 +1,4 @@
 .new-video-btn {
-  /* margin-left: auto;
-  cursor: pointer;
-  padding: 10px 24px;
-  border-radius: 1.5rem;
-  border: 2px solid;
-  color: #ff206e;
-  border-color: #ff206e;
-  background-color: #ffffff; */
-
-  /* margin-top: 1rem !important; */
   margin-left: auto;
   /* margin: auto; */
   font-weight: bold;
@@ -22,7 +12,6 @@
   cursor: pointer !important;
 }
 .new-video-btn:hover {
-  /* color: #111111; */
   color: #ffffff;
   border: 2px solid #ff83a5;
   background-color: #ff83a5;
@@ -30,30 +19,32 @@
 }
 
 .dash-navbar-container {
-  /* background-color: #373131; */
   font-size: larger;
-  /* padding: 10px; */
 }
+
+/* ---------- */
 
 .dash-navbar-names {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  /* gap: 1rem; */
+  gap: 0rem;
 }
+
+/* ------------- */
 
 .dash-navbar {
   display: flex;
   list-style-type: none;
-  justify-content: center; /* Center align the list items */
+  justify-content: center;
   padding: 10px;
+  /* padding: 10px 10px 0 10px; */
 }
 
 .dash-navbar li {
   position: relative;
   margin-right: 10px;
   cursor: pointer;
-  /* color: #ffffff; */
-  /* font-weight: bold; */
 }
 
 .dash-navbar li.active {
@@ -67,7 +58,6 @@
   width: 100%;
   height: 2px;
   background-color: #ffffff;
-  /* background-color: #000000; */
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -98,24 +88,101 @@
 .save-form input,
 .save-form select {
   width: 100%;
-  padding: 8px;
-  margin-top: 4px;
+  /* padding: 8px; */
+  margin-top: 15px;
   font-size: 14px;
 }
 
 .save-form button {
+  right: auto;
   margin-top: 20px;
-  padding: 8px 16px;
-  background-color: #4caf50;
-  color: white;
+  padding: 8px 20px;
+  background-color: #ffbc42;
+  color: rgb(0, 0, 0);
   border: none;
-  border-radius: 4px;
+  border-radius: 2rem;
   font-size: 14px;
   cursor: pointer;
+
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
 }
 
 .SaveRecordingInputFields {
-  background-color: bisque;
-  border: 2px solid #ffb1b1;
+  padding: 3% !important;
+  background-color: #1f020b;
+  border: 0px solid #ffb1b1;
   border-radius: 15px;
+}
+
+.RecordingSaveFormDetailsClass {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.RecordingSaveFormDetailsClass-sub {
+  max-width: 80%;
+  color: #ffffff;
+  background-color: rgba(72, 31, 47, 0.782);
+  box-shadow: 0 8px 32px 1px rgba(21, 23, 55, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 2rem;
+  border: 1px solid rgba(90, 43, 43, 0.18);
+}
+
+.saveRecordingForm {
+  margin: 0 2rem;
+}
+
+.startBtnClass {
+  background-color: #c81d58;
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.43);
+  border-radius: 1.5rem;
+}
+
+.stopBtnClass {
+  background-color: #771537;
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.43);
+  border-radius: 1.5rem;
+}
+
+.closePopupBtn {
+  background-color: #9a6a30;
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.43);
+  border-radius: 1.5rem;
+}
+
+.saveRecBtnClass {
+  background-color: #733838;
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.43);
+
+  border-radius: 1.5rem;
+}
+
+.navInDashListItemsClass {
+  list-style-type: none !important;
+}
+
+/* ------------- */
+
+.nav-button {
+  /* Customize the button styles */
+  display: inline-block;
+  padding: 8px 20px;
+  margin-right: 0px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #cb1d5a;
+  border-radius: 2rem 2rem 0 2rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.nav-button.active {
+  /* Customize the active button styles */
+  color: #ffffff;
+  background-color: #7c193c;
 }

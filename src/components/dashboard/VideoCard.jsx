@@ -58,7 +58,7 @@ const VideoCard = ({ videos }) => {
                 key={video.id}
                 id={`video-card-${video.id}`}
               >
-                <div
+                {/* <div
                   className="menu-icon"
                   onClick={() => handleMenuClick(video.id)}
                 >
@@ -81,11 +81,11 @@ const VideoCard = ({ videos }) => {
                       <ul>
                         <li>Copy Link</li>
                         <li>Download</li>
-                        {/* <li>Option 3</li> */}
+                        <li>Option 3</li>
                       </ul>
                     </div>
                   </>
-                )}
+                )} */}
                 <div className="thumbnail">
                   <video
                     src={`https://gateway.lighthouse.storage/ipfs/${video.content_cid}`}

@@ -4,6 +4,7 @@ import "../../styles/profilePage/ProfilePage.css";
 import { useAccount } from "wagmi";
 import { useNavigate } from "react-router-dom";
 
+
 function ProfilePage() {
   const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState(null);
