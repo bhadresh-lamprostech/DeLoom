@@ -15,11 +15,11 @@ function MyVideosPage() {
         const config = {
           method: "get",
           maxBodyLength: Infinity,
-          url: `http://localhost:3001/readpersonaldata?creator_address=${walletAddress}`,
+          url: `https://videapi.vercel.app/readpersonaldata?creator_address=${walletAddress}`,
           headers: {},
         };
         const response = await axios.request(config);
-        console.log(response.data)
+        console.log(response.data);
         setVideos(response.data);
       } catch (error) {
         console.log(error);
@@ -33,7 +33,7 @@ function MyVideosPage() {
     <>
       <div className="video-page">
         <div className="video-page-container">
-        <VideoCard videos={videos} />
+          <VideoCard videos={videos} />
         </div>
       </div>
     </>

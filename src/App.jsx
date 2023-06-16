@@ -7,7 +7,7 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-
+import mainBg from './assets/mainbg.png'
 import { Sidebar, Navbar } from "./components";
 import { CampaignDetails, Home, Profile } from "./pages";
 import LandingPage from "./pages/Landingpage";
@@ -49,7 +49,8 @@ const App = () => {
 
   return (
     <>
-      <div className="relative sm:-8 bg-[#fcfcfc] min-h-screen flex flex-row">
+      <div className="relative sm:-8" style={{ backgroundImage: `url(${mainBg})`, backgroundSize: 'cover', minHeight: '100vh', display: 'flex', flexDirection: 'row' }}>
+        
         {/* Render the Sidebar component only if not on the landing page */}
         {!isLandingPage && (
           <div className="sm:flex hidden mr-2 relative">
