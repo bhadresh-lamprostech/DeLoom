@@ -9,11 +9,12 @@ const LandingPage = () => {
 
   return (
     <>
-    <LandingPageHero/>
+    <div className='bgimage'><LandingPageHero/>
     <LandingDescription/>
     <LandingWorkflow/>
     <LandingSponsorSection/>
-    <FooterLanding/>
+    <FooterLanding/></div>
+    
     
     </>
   );

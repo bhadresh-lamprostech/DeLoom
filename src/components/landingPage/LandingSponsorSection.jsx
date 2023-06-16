@@ -28,6 +28,12 @@ const LandingSponsorSection = () => {
       description: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo4',
       icon: "src/assets/web3.png",
     },
+    {
+      id: 5,
+      name: 'LightHouse', 
+      description: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo 1',
+      icon: "src/assets/lighthouse1.png",
+    },
   ];
 
   return (

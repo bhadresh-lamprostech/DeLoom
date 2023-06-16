@@ -1,6 +1,6 @@
 .sponsor-section {
-    background-color: #ffffff;
-    background-image: url('src/assets/background.png');
+    /* background-color: #ffffff; */
+    /* background-image: url('src/assets/background.png'); */
     
     color: #ebabab;
     padding: 50px;
@@ -10,7 +10,7 @@
   .sponsor-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:center;
   }
   
   .poweredbyHeading {
@@ -31,10 +31,10 @@
   .sponsor-card {
     background-color: #fda4af;
     color: #000;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
-    border-radius: 8px;
-    width: 300px;
+    border-radius: 20px;
+    width: 250px;
     text-overflow: ellipsis;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add box-shadow for the sponsor cards */
   }
@@ -53,7 +53,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
   }
   
   .sponsor-card img {
