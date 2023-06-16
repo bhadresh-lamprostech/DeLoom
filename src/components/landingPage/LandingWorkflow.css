@@ -1,5 +1,5 @@
 .page-container {
-    background-image: url("../../assets/background.png");
+    /* background-image: url("../../assets/background.png"); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,17 +43,11 @@
     display: inline-block;
   }
   
-  ul {
-    list-style-type: none;
-    padding-left: 0;
+
+  .list-item {
+    margin-bottom: 0.9rem; /* Adjust the value as needed */
   }
   
-  li:before {
-    content: '\2022';
-    color: rgb(255, 255, 255);
-    font-size: 25px;
-    margin-right: 8px;
-  }
   
   /* Desktop Responsive Styles */
   @media screen and (min-width: 768px) {
