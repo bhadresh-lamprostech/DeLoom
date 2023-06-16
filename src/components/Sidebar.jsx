@@ -6,11 +6,8 @@ import "../styles/sidebar/Sidebar.css";
 
 const Icon = ({ styles, name, imgUrl, isActive, disabled, handelclick }) => (
   <div
-    className={`w-[48px] h-[48px] rounded-[10px] ${
-      // isActive && isActive === name && "bg-[#FF83A5]"
-      isActive && isActive === name && "bg-[#FF206E]"
-      // isActive && isActive === name && "bg-[#FFBC42]"
-      // isActive && isActive === name && "bg-[#9eefdfee]"
+    className={`w-[48px] h-[48px] rounded-[50px] ${
+      isActive && isActive === name && "bg-[#1c1818e4]"
     } flex justify-center
 items-center ${!disabled && "cursor-pointer"} ${styles}`}
     onClick={handelclick}
@@ -33,7 +30,7 @@ const Sidebar = () => {
 
   return (
     <div className="p-3">
-      <div className="flex justify-between item-center flex-col sticky top-5 h-[93vh]">
+      <div className="flex justify-between item-center ml-2 flex-col sticky top-5 h-[90vh]">
         <Link to="/">
           {/* <Icon styles="w-[52px] h-[52px] bg-[32c2f32]" imgUrl={vidWeaveLogo} /> */}
           <Icon
@@ -43,8 +40,8 @@ const Sidebar = () => {
           />
         </Link>
         <div
-          className="sidbarMainBg flex-1 flex flex-col justify-between items-center bg-[#ffffff]
-        rounded-[20px] w-[76px] py-4 mt-12"
+          className="sidbarMainBg flex-1 flex flex-col justify-between items-center 
+         w-[70px] h-[60vh] py-4 mt-12 mb-20"
         >
           <div className="flex flex-col justify-center items-center gap-3">
             {navlinks.map((link) => (
@@ -63,7 +60,7 @@ const Sidebar = () => {
           </div>
           <Icon
             className=""
-            styles="bg-[#FF206E] shadow-secondary"
+            styles={"w-[48px] h-[48px] rounded-[50px] bg-[#322222e4]"}
             handelclick={() => {
               navigate("/profile-page");
             }}

@@ -50,34 +50,6 @@ function WorkspaceMainPage() {
         walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E2",
         copied: false,
       },
-      {
-        name: "Jane Smith",
-        email: "jane.smith@example.com",
-        profileLogo: "src/assets/images/profilePhoto.jpg",
-        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E3",
-        copied: false,
-      },
-      {
-        name: "John Doe",
-        email: "john.doe@example.com",
-        profileLogo: "src/assets/images/profilePhoto.jpg",
-        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E2",
-        copied: false,
-      },
-      {
-        name: "Jane Smith",
-        email: "jane.smith@example.com",
-        profileLogo: "src/assets/images/profilePhoto.jpg",
-        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E3",
-        copied: false,
-      },
-      {
-        name: "John Doe",
-        email: "john.doe@example.com",
-        profileLogo: "src/assets/images/profilePhoto.jpg",
-        walletAddress: "0x3013bb4E03a7B81106D69C1071aE148C8410E2",
-        copied: false,
-      },
     ],
   });
 
@@ -144,10 +116,10 @@ function WorkspaceMainPage() {
   return (
     <>
       {/* <div className="WorkspacePageMainClass bg-[#ffbd429d] text-black"> */}
-      <div className="WorkspacePageMainClass text-black">
+      <div className="WorkspacePageMainClass text-white">
         <div>
-          <div className="WorkspaceHead">
-            <b>YOUR WORKSPACE PROFILE</b>
+          <div className="WorkspaceHead text-center text-[#ff83a5]">
+            <b>WORKSPACE PROFILE</b>
           </div>
           <div className="flex">
             <div className="WorkspacePhotoClass p-4">
@@ -162,19 +134,24 @@ function WorkspaceMainPage() {
             </div>
             <div className="UserWorkspaceDetails p-4">
               <div className="UserDetailRow">
-                <span className="UserDetailLabel">Workspace Name:</span>
-                <span className="UserDetailValue">
+                {/* <span className="UserDetailLabel">Workspace Name:</span> */}
+                <span className="UserDetailValue-wsName ">
                   {userData.workspaceName}
                 </span>
               </div>
               <div className="UserDetailRow">
-                <span className="UserDetailLabel">Email:</span>
-                <span className="UserDetailValue">{userData.email}</span>
+                {/* <span className="UserDetailLabel">Email:</span> */}
+                <span className="UserDetailValue-wsEmail">
+                  {userData.email}
+                </span>
               </div>
               <div className="UserDetailRow">
-                <span className="UserDetailLabel">Wallet Address:</span>
+                {/* <span className="UserDetailLabel-wsAddress">
+                  Wallet Address:
+                </span> */}
                 <span className="UserDetailValue mr-3">
-                  {renderWalletAddress(userData.walletAddress)}
+                  {/* {renderWalletAddress(userData.walletAddress)} */}
+                  {userData.walletAddress}
                 </span>
                 {workspaceCopied ? (
                   <MdOutlineCheckCircle className="CopyIcon Copied" />
@@ -192,10 +169,10 @@ function WorkspaceMainPage() {
           </div>
           <hr />
           <div className="UserTableMainClass">
-            <div className="mt-6 mr-6 mb-6">
+            <div className="mt-6 mr-6 mb-6 ">
               <b>USERS DETAILS:</b>
             </div>
-            <div className="UserTable mt-3 text-black">
+            <div className="UserTable mt-3">
               <div className="TableHeader">
                 {/* <div className="TableHeaderCell"></div> */}
                 <div className="TableHeaderCell">Name</div>

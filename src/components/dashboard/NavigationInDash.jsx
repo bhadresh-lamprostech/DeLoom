@@ -243,7 +243,7 @@ const NavigationInDash = () => {
     <>
       <div className="dash-navbar-container">
         <ul className="dash-navbar">
-          <div className="dash-navbar-names">
+          <div className="dash-navbar-names text-white">
             {navItems.map((item, index) => (
               <li
                 key={index}
@@ -256,7 +256,7 @@ const NavigationInDash = () => {
             ))}
           </div>
           <button className="new-video-btn" onClick={handleNewVideoClick}>
-            New Video
+            + New Video
           </button>
         </ul>
         <div className="">{renderPage()}</div>

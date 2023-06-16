@@ -4,6 +4,7 @@ import MainDashboard from "../components/dashboard/MainDashboard";
 import { useAccount } from "wagmi";
 import { ConnectKitButton } from "connectkit";
 import { useNavigate } from "react-router-dom";
+import UserDashboard from "../components/dashboard/UserDashboard";
 
 function Home() {
   const { isConnecting, isDisconnected, address } = useAccount();
@@ -63,7 +64,7 @@ function Home() {
           ) : (
             <>
               {walletAddress === dataAddress ? (
-                <MainDashboard />
+                <UserDashboard />
               ) : (
                 <div className="fixed inset-0 flex items-center justify-center z-50">
                   <div className="bg-white w-96 p-4 rounded-lg shadow-lg">
@@ -76,7 +77,7 @@ function Home() {
                     <div className="flex justify-end">
                       <button
                         className="bg-blue-500 text-white px-4 py-2 rounded-md"
-                        onClick={() => navigate("/reg-form")}
+                        onClick={() => navigate("/user-reg")}
                       >
                         Click here to Registration
                       </button>

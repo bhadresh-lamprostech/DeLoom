@@ -15,38 +15,54 @@ function FooterLanding() {
             </p>
             <br />
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-link"
+              >
                 <FaInstagram size={24} />
               </a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-link"
+              >
                 <FaLinkedin size={24} />
               </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-link"
+              >
                 <FaTwitter size={24} />
               </a>
             </div>
           </div>
 
           <div>
-            <img src="src/assets/footer.png" alt="Footer Image" className="h-44 mr-4 footerimg" /> {/* Add the image */}
+            <img src="src/assets/footer.png" alt="Footer Image" className="h-54 mr-4 footerimg" /> {/* Add the image */}
           </div>
         </div>
 
-        {/* Content div containing links */}
-        <div className="flex justify-center mt-8"><h2> Links</h2>
-          <ul><li href="/signup" className="mr-4">
+        <div className="flex flex-col items-center mt-4"> {/* Flex container for top-down links */}
+          <a href="/signup" className="my-2 link">
             Sign Up
-          </li>
-          <li href="/services" className="mr-4">
+          </a>
+          <a href="/services" className="my-2 link">
             Services
-          </li>
-          <li href="/contact" className="mr-4">
-            Contact Us</li>
-            <li href="/contact" className="mr-4">
-            Contact Us</li>
-            <li href="/contact" className="mr-4">
-            Contact Us</li>
-            </ul>
+          </a>
+          <a href="/services" className="my-2 link">
+            Services
+          </a>
+          <a href="/services" className="my-2 link">
+            Services
+          </a>
+          <a href="/contact" className="my-2 link">
+            Contact Us
+          </a>
         </div>
 
         <p className="text-center text-sm mt-4">&copy; {new Date().getFullYear()} VidWeave. All Rights Reserved.</p>
