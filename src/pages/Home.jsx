@@ -76,8 +76,8 @@ function Home() {
               {walletAddress === dataAddress ? (
                 <UserDashboard />
               ) : (
-                <div className="fixed inset-0 flex items-center justify-center z-50">
-                  <div className="bg-white w-96 p-4 rounded-lg shadow-lg">
+                <div className="onBoardRegMainClass fixed flex items-center justify-center">
+                  <div className="text-white w-96 p-4 rounded-lg shadow-lg">
                     <h2 className="text-lg font-bold mb-4">
                       You're missing out! 😔 Register now{" "}
                     </h2>
@@ -86,10 +86,10 @@ function Home() {
                     </p>
                     <div className="flex justify-end">
                       <button
-                        className="bg-blue-500 text-white px-4 py-2 rounded-md"
+                        className="onBoardRegBtn px-4 py-2 rounded-md"
                         onClick={() => navigate("/user-reg")}
                       >
-                        Click here to Registration
+                        Click here to Register
                       </button>
                     </div>
                   </div>

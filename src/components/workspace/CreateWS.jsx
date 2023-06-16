@@ -162,7 +162,7 @@ function CreateWS() {
           <h2 className="text-2xl font-bold mb-4 text-[#ff83a5]">
             CREATE YOUR WORKSPACE
           </h2>
-          <p className="text-gray-300 mb-6">
+          <p className="text-gray-300 mb-4">
             Please provide the following information to create your own
             workspace.
           </p>
