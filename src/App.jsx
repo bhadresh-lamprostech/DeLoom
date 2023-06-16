@@ -7,7 +7,7 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-import mainBg from './assets/mainbg.png'
+// import mainBg from './assets/mainbg.png'
 import { Sidebar, Navbar } from "./components";
 import { CampaignDetails, Home, Profile } from "./pages";
 import LandingPage from "./pages/Landingpage";

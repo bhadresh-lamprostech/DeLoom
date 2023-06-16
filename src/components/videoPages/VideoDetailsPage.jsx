@@ -5,6 +5,7 @@ import "../../styles/videoPages/VideoDetailsPage.css";
 function VideoDetailsPage() {
   const location = useLocation();
   const videoId = location.state.data;
+  console.log(videoId)
 
   return (
     // <div className="videoDetailsMainClass bg-[#ff83a5]">
@@ -14,7 +15,8 @@ function VideoDetailsPage() {
         <div className="iframeforborder">
           <iframe
             className="iframeMainClass"
-            src={`https://www.youtube.com/embed/${videoId}`} // Change with our link
+            src={`https://gateway.lighthouse.storage/ipfs/${videoId.content_cid}`} // Change with our link
+            // `https://gateway.lighthouse.storage/ipfs/${video.content_cid}`
             title="YouTube Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
