@@ -24,7 +24,7 @@ function ProfilePage() {
           `https://videapi.vercel.app/readdata?address=${walletAddress}`
         );
         setUserProfile(response.data[0]); // Access the first object in the array
-        console.log(response.data[0])
+        console.log(response.data[0]);
       } catch (error) {
         console.log(error);
       }
@@ -36,7 +36,7 @@ function ProfilePage() {
   return (
     <>
       <div className="ProfileHead">PERSONAL PROFILE</div>
-      <div className="ProfilePageMainClass bg-[#ffffff] ">
+      <div className="ProfilePageMainClass ">
         {userProfile ? (
           <div className="ProfileContent">
             <div className="ProfilePhotoClass">
@@ -55,11 +55,11 @@ function ProfilePage() {
                   <b>Username: </b> 
                   {userProfile.username}
                 </h2> */}
-              <p>
+              <p className="UserProfileDetails-email">
                 {/* <b>Contact Info: </b>  */}
                 {userProfile.email}
               </p>
-              <p>
+              <p className="UserProfileDetails-address">
                 {/* <b>Wallet Address: </b>  */}
                 {address}
               </p>

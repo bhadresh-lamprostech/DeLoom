@@ -1,16 +1,24 @@
 .DashboardPageMainClass {
-  height: 100vh;
-  padding: 2%;
+  height: 80vh;
+  padding: 3%;
   border-radius: 2rem;
-  margin-right: 1.8rem;
+  /* margin-right: 1.8rem; */
   overflow: hidden;
-  margin-left: 2%;
-  max-height: 84vh;
-  margin-top: 2%;
+  /* margin-left: 2%; */
+  max-height: 80vh;
+  /* margin-top: 2%; */
+  margin: 3%;
 
-  -webkit-box-shadow: -1px -1px 9px 2px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: -1px -1px 9px 2px rgba(0, 0, 0, 0.23);
-  box-shadow: -1px -1px 9px 2px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0px 0px 32px 1px rgba(214, 30, 94, 0.64);
+  -moz-box-shadow: 0px 0px 32px 1px rgba(214, 30, 94, 0.64);
+  box-shadow: 0px 0px 32px 1px rgba(214, 30, 94, 0.64);
+
+  background: #1e0b1360;
+  /* box-shadow: 0 8px 20px 0 #d61e5e; */
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 3.5rem 3.5rem 0 3.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .Dashboard-head-name {

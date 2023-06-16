@@ -19,11 +19,11 @@ function LandingDescription() {
                 
               </div>
               <h2 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight text-rose-300 sm:text-5xl sm:leading-none">
-                 The empowering decentralised platform for creating and 
+              Transforming Video Sharing: Embrace the 
                 <br className="hidden md:block" />
-                sharing {' '}<br></br>
+                Decentralized  {' '}<br></br>
                 <span className="inline-block font-bold text-[#ff206e]">
-                video
+                Revolution
                 </span>
               </h2>
               <p className="text-base text-pink-50 md:text-lg">

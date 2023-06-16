@@ -27,15 +27,23 @@
 /* ---------------- */
 
 .ProfilePageMainClass {
-  /* height: 83vh; */
-  height: 27.5vh;
-  padding: 2%;
-  border-radius: 2.5rem;
-  margin: 2%;
+  /* height: 27.5vh; */
 
-  -webkit-box-shadow: -1px -1px 9px 2px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: -1px -1px 9px 2px rgba(0, 0, 0, 0.23);
-  box-shadow: -1px -1px 9px 2px rgba(0, 0, 0, 0.23);
+  padding: 2.5%;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin: 3%;
+
+  -webkit-box-shadow: 0px 0px 32px 1px rgba(214, 30, 94, 0.64);
+  -moz-box-shadow: 0px 0px 32px 1px rgba(214, 30, 94, 0.64);
+  box-shadow: 0px 0px 32px 1px rgba(214, 30, 94, 0.64);
+
+  background: #1e0b1360;
+  /* box-shadow: 0 8px 20px 0 #d61e5e; */
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 3.5rem 3.5rem 3.5rem 3.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .profile-photo {
@@ -70,8 +78,10 @@
 }
 
 .ProfileHead {
+  color: #ff83a5;
+  text-align: center;
   padding: 2%;
-  font-size: larger;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -88,28 +98,14 @@
 } */
 
 .createWorkspaceBtn {
-  display: inline-block;
-  padding: 0.5em 1.7em;
-  margin: -1rem 0.1em 0.1em 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
-  text-align: center;
-  transition: all 0.2s;
-
-  border-radius: 1.5rem;
-  border: 2px solid;
-  color: #ff206e;
-  border-color: #ff206e;
-  background-color: #ffffff;
-}
-
-.createWorkspaceBtn:hover {
-  color: #ffffff;
-  border: 2px solid #ff83a5;
-  background-color: #ff83a5;
+  width: fit-content;
+  background-color: #f7b723 !important;
+  box-shadow: 0 0 10px 2px #f7b723a9;
+  color: #000000 !important;
+  padding: 10px 35px !important;
+  border: none !important;
+  border-radius: 2rem 2rem 0 2rem !important;
+  cursor: pointer !important;
 }
 
 .UserProfileDetails > * {
@@ -145,4 +141,11 @@
 .UserProfileDetails-Name {
   text-transform: uppercase;
   font-weight: bold;
+  color: #ff206e;
+  font-size: x-large;
+}
+
+.UserProfileDetails-email,
+.UserProfileDetails-address {
+  color: #ffffff !important;
 }

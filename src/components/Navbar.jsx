@@ -15,14 +15,14 @@ const Navbar = () => {
     //   style={{margin-bottom: 3%;
     //     padding-bottom: 0;
     // }}
-    <div className="sm:pr-5 p-3 pb-0 mb-5 sticky top-0 bg-[#ffffff] z-10">
+    <div className="sm:pr-5 p-3 pb-0 mb-5 sticky top-0 z-10">
       {/*  <div className="sm:pr-5 p-4 sticky top-0 bg-[#13131a] z-10"> */}
       <div
         className="flex md:flex-row flex-col-reverse justify-between mb-[20px]
     gap-6"
       >
         {/* <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#ff83a5] rounded-[100px]"> */}
-        <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#a8a4a7] rounded-[100px]">
+        {/* <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#a8a4a7] rounded-[100px]">
           <input
             type="text"
             placeholder="Search for workspaces"
@@ -39,8 +39,8 @@ const Navbar = () => {
               className="w-[15px] h-[15px] object-contain"
             />
           </div>
-        </div>
-        <div className="sm:flex hidden flex-row justify-end gap-4">
+        </div> */}
+        <div className="sm:flex hidden flex-row justify-end gap-4 lg:flex-1 flex mr-2 mt-2">
           <ConnectKitButton />
         </div>
         {/* small screen  */}

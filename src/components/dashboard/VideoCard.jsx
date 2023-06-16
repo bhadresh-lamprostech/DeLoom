@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/dashboard/VideoCard.css";
 import { useNavigate } from "react-router-dom";
+import watchIcon from "/src/assets/watch icon.png";
 
 const VideoCard = ({ videos }) => {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState({});
 
-  console.log(videos)
+  console.log(videos);
 
   const handleMenuClick = (videoId) => {
+    console.log("Menu clicked for video ID:", videoId);
     setShowMenu((prevState) => ({
       ...prevState,
       [videoId]: !prevState[videoId],
@@ -85,9 +87,10 @@ const VideoCard = ({ videos }) => {
                   </>
                 )}
                 <div className="thumbnail">
-                <video src={`https://gateway.lighthouse.storage/ipfs/${video.content_cid}`} alt={video.video_name} />
-
-                  
+                  <video
+                    src={`https://gateway.lighthouse.storage/ipfs/${video.content_cid}`}
+                    alt={video.video_name}
+                  />
                 </div>
                 {/* <div className="titleDescNameBtnMain"> */}
                 <div className="details titleDescNameBtnMain">
@@ -104,23 +107,10 @@ const VideoCard = ({ videos }) => {
                         state: { data: video },
                       })
                     }
-                    className="view-more-button  mb-3"
+                    className="view-more-button flex items-center justify-center text-center  mb-3"
                   >
-                    <p className=" ">Open</p>
-                    <svg
-                      strokeWidth="4"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        strokeLinejoin="round"
-                        strokeLinecap="round"
-                      ></path>
-                    </svg>
+                    <p className="mr-1 ">Watch </p>
+                    <img src={watchIcon} className="h-[15px] w-[15px]" alt="" />
                   </button>
                 </div>
               </div>
