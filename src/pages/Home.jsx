@@ -55,7 +55,7 @@ function Home() {
           <div className="connectWalletInstructionClass ">
             <div className="connectWalletIns_2 flex items-center justify-center p-5">
               <p className="text-white mr-5">Please connect your wallet</p>
-              <ConnectKitButton />
+              {/* <ConnectKitButton /> */}
             </div>
           </div>
         </div>

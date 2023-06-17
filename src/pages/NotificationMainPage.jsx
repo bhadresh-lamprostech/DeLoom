@@ -37,19 +37,17 @@ function NotificationMainPage() {
   // Array of notification objects
   const notifications = [
     {
-      title: "Notification 1",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores commodi laborum, sint quo minima voluptatum consectetur id porro repudiandae at nemo ex expedita ipsam non dignissimos tenetur! Laboriosam, vero inventore!",
+      title: "Alex's Workspace",
+      description: "Alex has uploaded a video!",
     },
     {
-      title: "Notification 2",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores commodi laborum, sint quo minima voluptatum consectetur id porro repudiandae at nemo ex expedita ipsam non dignissimos tenetur! Laboriosam, vero inventore!",
+      title: "New Message",
+      description: "Message from Riha in Workflow video.",
     },
     {
-      title: "Notification 3",
+      title: "Welcome !",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores commodi laborum, sint quo minima voluptatum consectetur id porro repudiandae at nemo ex expedita ipsam non dignissimos tenetur! Laboriosam, vero inventore!",
+        "Vidweave: Hey User, Welcome to the Future of Decentralized Screen Recording and Collaboration.",
     },
   ];
 

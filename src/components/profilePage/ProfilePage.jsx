@@ -3,6 +3,7 @@ import axios from "axios";
 import "../../styles/profilePage/ProfilePage.css";
 import { useAccount } from "wagmi";
 import { useNavigate } from "react-router-dom";
+import userProfilePicture from "/src/assets/peterparkerprofile.png";
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ function ProfilePage() {
             <div className="ProfilePhotoClass">
               <img
                 src={"https://" + `${userProfile.logocid}` + ".ipfs.w3s.link"}
+                // src={userProfilePicture}
                 alt="Profile"
                 className="profile-photo"
               />
