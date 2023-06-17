@@ -101,7 +101,7 @@ const Navbar = () => {
                 </li>
               ))}
 
-              <NotificationPage />
+              {/* <NotificationPage /> */}
             </ul>
             <div className="flex mx-4">
               <ConnectKitButton />

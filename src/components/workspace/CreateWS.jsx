@@ -3,6 +3,7 @@ import axios from "axios";
 import "../../styles/workspace/CreateWS.css";
 import { useAccount } from "wagmi";
 import { Web3Storage } from "web3.storage";
+import { useNavigate } from "react-router-dom";
 
 const client = new Web3Storage({
   token:
@@ -10,8 +11,11 @@ const client = new Web3Storage({
 });
 
 function CreateWS() {
+  const navigate = useNavigate();
   const [logoPreview, setLogoPreview] = useState(null);
   const [imageCid, setImageCid] = useState();
+  const [btnloading, setbtnloading] = useState(false);
+  const [btndisable, setbtndisable] = useState(false);
   const [formData, setFormData] = useState({
     workspace: "",
     logo: null,
@@ -121,8 +125,10 @@ function CreateWS() {
   };
 
   const handleSubmit = async (e) => {
+    console.log("create button clicked");
     e.preventDefault();
-
+    setbtndisable(true);
+    setbtnloading(true);
     const formDataToSend = {
       id: creatorData.id,
       name: formData.workspace,
@@ -149,8 +155,13 @@ function CreateWS() {
         formDataToSend
       );
       console.log(response.data);
+      navigate("/workspace-page");
+      setbtndisable(false);
+      setbtnloading(false);
     } catch (error) {
       console.log(error);
+      setbtndisable(false);
+      setbtnloading(false);
     }
   };
 
@@ -258,15 +269,77 @@ function CreateWS() {
                 )}
               </div>
             </div>
-
             <button
               type="submit"
-              className="createWorkspaceBtnClass inline-block px-6 py-2.5  text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out"
-              // className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              className="createWorkspaceBtnClass inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 w-25 h-8 active:shadow-lg transition duration-150 ease-in-out"
               onClick={handleSubmit}
+              disabled={btndisable}
             >
-              Create
+              {btnloading ? (
+                <svg
+                  width="48"
+                  height="15"
+                  viewBox="0 0 38 38"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#fff"
+                >
+                  <g fill="none" fill-rule="evenodd">
+                    <g transform="translate(1 1)" strokeWidth="4">
+                      <circle strokeOpacity=".5" cx="18" cy="18" r="18" />
+                      <path d="M36 18c0-9.94-8.06-18-18-18">
+                        <animateTransform
+                          attributeName="transform"
+                          type="rotate"
+                          from="0 18 18"
+                          to="360 18 18"
+                          dur="1s"
+                          repeatCount="indefinite"
+                        />
+                      </path>
+                    </g>
+                  </g>
+                </svg>
+              ) : (
+                // <>Creating...</>
+                <>Create</>
+              )}
             </button>
+
+            {/* <button
+              type="submit"
+              className="createWorkspaceBtnClass inline-block px-6 py-2.5  text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 w-[150px] active:shadow-lg transition duration-150 ease-in-out"
+              onClick={handleSubmit}
+              disabled={btndisable}
+            >
+              {btnloading ? (
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 38 38"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#fff"
+                >
+                  <g fill="none" fill-rule="evenodd">
+                    <g transform="translate(1 1)" stroke-width="2">
+                      <circle stroke-opacity=".5" cx="18" cy="18" r="18" />
+                      <path d="M36 18c0-9.94-8.06-18-18-18">
+                        <animateTransform
+                          attributeName="transform"
+                          type="rotate"
+                          from="0 18 18"
+                          to="360 18 18"
+                          dur="1s"
+                          repeatCount="indefinite"
+                        />
+                      </path>
+                    </g>
+                  </g>
+                </svg>
+              ) : (
+                // <>Creating...</>
+                <>Create</>
+              )}
+            </button> */}
           </form>
         </div>
       </div>

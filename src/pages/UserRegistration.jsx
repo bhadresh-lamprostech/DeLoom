@@ -28,6 +28,9 @@ function UserRegistration() {
   });
   const [isLogoUploading, setIsLogoUploading] = useState(false);
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
+
+  const [btnloading, setbtnloading] = useState(false);
+  const [btndisable, setbtndisable] = useState(false);
   const { address } = useAccount();
   const walletAddress = address;
 
@@ -75,7 +78,9 @@ function UserRegistration() {
   };
 
   const handleSubmit = async (e) => {
+    console.log("Submit button clicked");
     e.preventDefault();
+    setbtndisable(true);
     setIsFormSubmitting(true);
 
     await logoUpload();
@@ -98,10 +103,13 @@ function UserRegistration() {
         navigate("/profile-page");
       })
       .catch((error) => {
+        setIsFormSubmitting(false);
         console.log(error);
+        setbtndisable(false);
       })
       .finally(() => {
         setIsFormSubmitting(false);
+        setbtndisable(false);
       });
   };
 
@@ -220,7 +228,7 @@ function UserRegistration() {
                 className="RegFormSubmitBtn"
                 type="submit"
                 onClick={handleSubmit}
-                disabled={isFormSubmitting}
+                disabled={btndisable}
               >
                 {isFormSubmitting ? "Submitting..." : "Sign Up"}
               </button>
