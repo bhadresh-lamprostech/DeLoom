@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./LandingPage.css";
 import heroicon from "../../assets/Heroicon.png";
+import logo from "../../assets/VidWeave.png";
 import { useNavigate } from "react-router-dom";
 
 const LandingPageHero = () => {
@@ -12,7 +13,7 @@ const LandingPageHero = () => {
       <nav className="navbar">
         <motion.img
           className="navbar-logo"
-          src="src/assets/VidWeave.png"
+          src={logo}
           alt="VidWeave Logo"
           style={{ transform: "scale(1.2)" }}
         />

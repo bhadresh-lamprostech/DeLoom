@@ -23,13 +23,15 @@ import UserRegistration from "./pages/UserRegistration";
 import UserDashboard from "./components/dashboard/UserDashboard";
 // import VideoDetail from "./components/videoPages/VideoDetailsPage";
 import mainBg from "./assets/mainbg.png";
+import WithNav from "./components/WithNav";
+import WithoutNav from "./components/WithoutNav";
 
 const App = () => {
-  const location = useLocation();
+  // const location = useLocation();
 
-  // Check if the current route is the landing page
-  const isLandingPage = location.pathname === "/landing";
-  const isRegistrationPage = location.pathname === "/user-reg";
+  // // Check if the current route is the landing page
+  // const isLandingPage = location.pathname === "/" ? true : false;
+  // const isRegistrationPage = location.pathname === "/user-reg" ? true : false;
 
   const [videos, setVideos] = useState([]); // Assuming you have a videos array
 
@@ -54,27 +56,13 @@ const App = () => {
   return (
     <>
       {/* <div className="MainAppClassBg relative sm:-8 min-h-screen flex flex-row"> */}
-      <div
-        className="relative sm:-8"
-        style={{
-          backgroundImage: `url(${mainBg})`,
-          backgroundSize: "cover",
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
-        {!isLandingPage && !isRegistrationPage && (
-          <div className="sm:flex hidden mr-2 relative">
-            <Sidebar />
-          </div>
-        )}
-
-        <div className="flex-1 max-sm:w-full mac-w-[1280px] mx-auto">
-          {!isLandingPage && !isRegistrationPage && <Navbar />}
-          <Routes>
-            <Route path="/" element={<Navigate to="/landing" />} />
-            <Route path="/landing" element={<LandingPage />} />
+      <Router>
+        <Routes>
+          {/* <Route path="/" element={<Navigate to="/landing" />} /> */}
+          <Route element={<WithoutNav />}>
+            <Route path="/" element={<LandingPage />} />
+          </Route>
+          <Route element={<WithNav />}>
             <Route path="/user-reg" element={<UserRegistration />} />
             <Route path="/dashboard" element={<Home />} />
             <Route path="/library" element={<UserDashboard />} />
@@ -92,11 +80,10 @@ const App = () => {
               path="/video-page/:videoId"
               element={<VideoDetailsPage videos={videos} />}
             />
-
-            {/* <Route path="/newuser" element={<MainDashboard />} /> */}
-          </Routes>
-        </div>
-      </div>
+          </Route>
+          {/* <Route path="/newuser" element={<MainDashboard />} /> */}
+        </Routes>
+      </Router>
     </>
   );
 };
