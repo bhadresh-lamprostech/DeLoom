@@ -169,7 +169,7 @@ const NavigationInDash = () => {
   //   const fetchData = async () => {
   //     try {
   //       const response = await axios.get(
-  //         "https://videapi.vercel.app/readworkspacedata",
+  //         "https://deloom.vercel.app/readworkspacedata",
   //         {
   //           params: {
   //             creatoraddress: walletAddress, // Replace with the actual creator address
@@ -220,7 +220,7 @@ const NavigationInDash = () => {
 
       // Make the API request for saving in personal
       axios
-        .post("https://videapi.vercel.app/insertpersonal", requestData)
+        .post("https://deloom.vercel.app/insertpersonal", requestData)
         .then((response) => {
           console.log(response.data);
         })
@@ -240,7 +240,7 @@ const NavigationInDash = () => {
 
       // Make the API request for saving in workspace
       axios
-        .post("https://videapi.vercel.app/insertvideodata", requestData)
+        .post("https://deloom.vercel.app/insertvideodata", requestData)
         .then((response) => {
           console.log(response.data);
         })

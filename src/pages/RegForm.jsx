@@ -86,7 +86,7 @@ const RegForm = () => {
     console.log(data);
 
     axios
-      .post("https://videapi.vercel.app/insertuserdata", data)
+      .post("https://deloom.vercel.app/insertuserdata", data)
       .then((response) => {
         console.log(response.data);
         navigate("/profile-page");

@@ -22,7 +22,7 @@ function Home() {
         let config = {
           method: "get",
           maxBodyLength: Infinity,
-          url: `https://videapi.vercel.app/readdata?address=${walletAddress}`,
+          url: `https://deloom.vercel.app/readdata?address=${walletAddress}`,
           headers: {},
         };
 
