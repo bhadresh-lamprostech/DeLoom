@@ -1,8 +1,67 @@
 import React, { useState } from 'react';
+import * as PushAPI from "@pushprotocol/restapi";
 
 
 const NotificationPage = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+
+  const optInChannel = async () => {
+    try {
+    await channels.subscribe({
+      signer: mysigner,
+      channelAddress: "eip155:5:0xF9da412Cc753e3E18E6428286b5677C0E301BE3d", // channel address in CAIP
+      userAddress :  userAddresses,
+       // user address in CAIP
+      onSuccess: () => {
+        console.log("opt in success");
+        welcomeNotification();
+      },
+      onError: () => {
+        console.error("opt in error");
+      },
+      env: "staging",
+    });
+    } catch (error) {
+      console.error("Error:", error);
+        }
+        // console.log();
+  };
+
+  const welcomeNotification = async () => {
+    try {
+      const apiResponse = await sendNotification({
+        signer: mysigner,
+        type: 4, // target
+        identityType: 2, // direct payload
+        notification: {
+          title: `[SDK-TEST] notification TITLE:`,
+          body: `[sdk-test] notification BODY`,
+        },
+        payload: {
+          title: ` Welcome`,
+          body: `welcome to Vidweave: Decentralised Video and collabration`,
+          cta: "",
+          img: "",
+        },
+
+        recipients: userAddresses,
+        channel: "eip155:5:0xF9da412Cc753e3E18E6428286b5677C0E301BE3d", // your channel address
+        env: "staging",
+        onSuccess: () => {
+          console.log("welcome Notification Sent");
+        },
+        onError: () => {
+          console.error("An error occurred while sending welcome notification");
+        },
+      });
+    } 
+    catch (error) {
+      console.error("Error:", error);
+        }
+        console.log(welcomeNotification);
+  };
+
 
   const toggleNotification = () => {
     setIsOpen(!isOpen);

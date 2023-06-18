@@ -1,6 +1,32 @@
 import React from "react";
 
 const ChatComponent = () => {
+const groupChat = async () => {
+  // pre-requisite API calls that should be made before
+// need to get user and through that encryptedPvtKey of the user
+const user = await PushAPI.user.get({
+  account: 'eip155:0xF9da412Cc753e3E18E6428286b5677C0E301BE3d'
+});
+
+// need to decrypt the encryptedPvtKey to pass in the api using helper function
+const pgpDecryptedPvtKey = await PushAPI.chat.decryptPGPKey({
+      encryptedPGPPrivateKey: user.encryptedPrivateKey, 
+      signer: _signer
+});
+
+// actual api
+const response = await PushAPI.chat.updateGroup({
+  groupName: 'Workspace demo',
+  groupDescription: 'workspace group chat and collabration',
+  members: ['0x348AE47edF21fa5e5A333347680B3971F9035','0xF9da412Cc753e3E18E6428286b5677C0E301BE3d'],
+  // groupImage: &lt;group image link&gt; ,
+  admins: ['0xF9da412Cc753e3E18E6428286b5677C0E301BE3d'],
+  account: '0xD993eb61B8843439A23741C0A3b5138763aE11a4',
+  pgpPrivateKey: pgpDecryptedPvtKey, //decrypted private key
+});
+}
+
+
   return (
     <div className="flex flex-col items-center justify-center w-[100] h-[520px] text-gray-800 p-2">
       {/* Component Start */}
