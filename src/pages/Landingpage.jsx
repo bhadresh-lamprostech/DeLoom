@@ -4,6 +4,7 @@ import LandingDescription from '../components/landingPage/LandingDescription';
 import FooterLanding from '../components/landingPage/FooterLanding';
 import LandingWorkflow from '../components/landingPage/LandingWorkflow';
 import LandingSponsorSection from '../components/landingPage/LandingSponsorSection';
+import '../pages/LandingPage.css';
 
 const LandingPage = () => {
 

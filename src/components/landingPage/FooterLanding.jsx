@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import logo from '../../assets/VidWeave.png'; // Import the website logo image
+import './LandingPage.css'
 
 function FooterLanding() {
   return (
