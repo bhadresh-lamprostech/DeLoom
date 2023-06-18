@@ -2,6 +2,7 @@ import React from 'react';
 import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import logo from '../../assets/VidWeave.png'; // Import the website logo image
 import './LandingPage.css'
+import footerimg from '../../assets/footer.png'
 
 function FooterLanding() {
   return (
@@ -50,7 +51,7 @@ function FooterLanding() {
           </div>
           
           <div>
-            <img src="src/assets/footer.png" alt="Footer Image" className="h-54 mr-4 footerimg" /> {/* Add the image */}
+            <img src={footerimg} alt="Footer Image" className="h-54 mr-4 footerimg" /> {/* Add the image */}
           </div>
         </div>
 
